@@ -55,6 +55,7 @@ namespace GroupProject
     public void Dispose()
     {
       User.DeleteAll();
+      Organization.DeleteAll();
     }
   }
 }
