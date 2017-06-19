@@ -108,6 +108,80 @@ namespace GroupProject
       return allUsers;
     }
 
+    public void Save()
+    {
+      SqlConnection conn = DB.Connection();
+      conn.Open();
+
+      SqlCommand cmd = new SqlCommand("INSERT INTO users (user_name, password, name, email, bio) OUTPUT INSERTED.id VALUES (@UserName, @Password, @Name, @Email, @Bio);", conn);
+
+      SqlParameter userNamePara = new SqlParameter("@UserName", this.GetUserName());
+      SqlParameter passwordPara = new SqlParameter("@Password", this.GetPassword());
+      SqlParameter namePara = new SqlParameter("@Name", this.GetName());
+      SqlParameter emailPara = new SqlParameter("@Email", this.GetEmail());
+      SqlParameter bioPara = new SqlParameter("@Bio", this.GetBio());
+
+      cmd.Parameters.Add(userNamePara);
+      cmd.Parameters.Add(passwordPara);
+      cmd.Parameters.Add(namePara);
+      cmd.Parameters.Add(emailPara);
+      cmd.Parameters.Add(bioPara);
+
+
+      SqlDataReader rdr = cmd.ExecuteReader();
+
+      while(rdr.Read())
+      {
+        this._id = rdr.GetInt32(0);
+      }
+      if(rdr != null)
+      {
+        rdr.Close();
+      }
+      if(conn != null)
+      {
+        conn.Close();
+      }
+    }
+
+    public static User Find(int id)
+    {
+      SqlConnection conn = DB.Connection();
+      conn.Open();
+
+      SqlCommand cmd = new SqlCommand("SELECT * FROM  users WHERE id = @UserId;", conn);
+      SqlParameter userIdParameter = new  SqlParameter("@UserId", id.ToString());
+      cmd.Parameters.Add(userIdParameter);
+      SqlDataReader rdr = cmd.ExecuteReader();
+
+      int foundUserId = 0;
+      string foundUserName = null;
+      string foundPassword = null;
+      string foundName = null;
+      string foundEmail = null;
+      string foundBio = null;
+
+      while(rdr.Read())
+      {
+        foundUserId = rdr.GetInt32(0);
+        foundUserName = rdr.GetString(1);
+        foundPassword = rdr.GetString(2);
+        foundName = rdr.GetString(3);
+        foundEmail = rdr.GetString(4);
+        foundBio = rdr.GetString(5);
+      }
+      User foundUser = new  User(foundUserName, foundPassword, foundName, foundEmail, foundBio, foundUserId);
+      if (rdr != null)
+      {
+        rdr.Close();
+      }
+      if (conn != null)
+      {
+        conn.Close();
+      }
+      return foundUser;
+    }
+
     public static void DeleteAll()
     {
       SqlConnection conn = DB.Connection();

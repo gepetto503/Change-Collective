@@ -23,6 +23,34 @@ namespace GroupProject
       Assert.Equal(0, result);
     }
 
+    [Fact]
+    public void Test_Save_SavesToDatabase()
+    {
+     //Arrange
+    User testUser = new User("ShakyTown", "Marley88", "Jordan", "jdmysliwiec@gmail.com", "I like to Help");
+
+     //Act
+     testUser.Save();
+     List<User> result = User.GetAll();
+     List<User> testList = new List<User>{testUser};
+
+     //Assert
+     Assert.Equal(testList, result);
+    }
+
+    [Fact]
+    public void Test_Find_FindUserInDatabase()
+    {
+      //Arrange
+      User testUser = new User("ShakyTown", "Marley88", "Jordan", "jdmysliwiec@gmail.com", "I like to Help");
+      testUser.Save();
+
+      //Act
+      User foundUser = User.Find(testUser.GetId());
+
+      //Assert
+      Assert.Equal(testUser, foundUser);
+    }
 
     public void Dispose()
     {
