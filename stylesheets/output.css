@@ -260,15 +260,25 @@ nav {
   .form-flex-container .my-form {
     background-color: lightgrey;
     border-radius: 5px;
-    padding: 30px; }
+    padding: 30px;
+    width: 100%;
+    max-width: 370px; }
     .form-flex-container .my-form .form-group {
-      padding: 20px;
+      padding: 3px 0px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      margin: 20px auto; }
+      margin: 8px 0px; }
       .form-flex-container .my-form .form-group label {
-        margin-bottom: 20px; }
+        margin: 4px 0px;
+        font-size: 0.75em; }
+      .form-flex-container .my-form .form-group input {
+        height: 33px;
+        border-radius: 5px;
+        border-style: none;
+        padding: 10px; }
+    .form-flex-container .my-form p {
+      text-align: center;
+      font-size: 12px; }
 
 footer {
   position: relative;
@@ -297,6 +307,7 @@ footer a:nth-child(3) li {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   min-height: 500px;
   letter-spacing: 2px;
   padding: 40px; }
@@ -312,5 +323,14 @@ footer a:nth-child(3) li {
     margin-bottom: 20px;
     font-size: 17px;
     line-height: 2; }
+
+.form-button {
+  background-color: #ffa172;
+  height: 30px;
+  width: 100%;
+  border-radius: 5px;
+  color: white;
+  border-style: none;
+  font-weight: bold; }
 
 /*# sourceMappingURL=output.css.map */
