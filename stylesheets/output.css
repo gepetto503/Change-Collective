@@ -427,6 +427,9 @@ footer a:nth-child(3) li {
       .mission p {
         line-height: 2; } }
 
+section {
+  margin-top: 80px; }
+
 .form-button {
   background-color: #ffa172;
   height: 30px;
