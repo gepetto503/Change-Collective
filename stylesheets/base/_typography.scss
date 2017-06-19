@@ -1,0 +1,24 @@
+ //Basic typography style for copy text
+
+* {
+  font-family: 'Junction';
+}
+
+
+
+
+
+.highlight-text {
+  color: $color
+}
+
+.cause p {
+  @include tablet {
+    font-size: 1em;
+  };
+  @include desktop {
+    font-size: .8em;
+    line-height: 1.2;
+    margin: 0;
+  };
+}
