@@ -16,20 +16,32 @@
       flex-direction: column;
       margin: 8px 0px;
       label {
-        margin: 4px 0px;
-        font-size: 0.75em;
+        margin: 8px 0px;
+        font-size: 16px;
+
       }
       input {
         height: 33px;
         border-radius: 5px;
         border-style: none;
         padding: 10px;
+        font-size: 16px;
+
       }
     }
     p {
       text-align: center;
-      font-size: 12px;
+      font-size: 16px;
+
+    } //form group
+
+    button {
+      font-size: 16px;
+
+      margin-top: 25px;
+
     }
+
   }
 
 

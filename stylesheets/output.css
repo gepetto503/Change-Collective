@@ -30,17 +30,11 @@ li {
 * {
   font-family: 'Junction'; }
 
+p {
+  line-height: 1.5; }
+
 .highlight-text {
   color: #ffa172; }
-
-@media (min-width: 768px) {
-  .cause p {
-    font-size: 1em; } }
-@media (min-width: 1024px) {
-  .cause p {
-    font-size: .8em;
-    line-height: 1.2;
-    margin: 0; } }
 
 @font-face {
   font-family: 'Junction';
@@ -161,7 +155,11 @@ nav {
   padding: 50px 2% 250px; }
 
 .main {
-  padding: 20px; }
+  padding: 20px;
+  margin: auto; }
+  @media (min-width: 1024px) {
+    .main {
+      max-width: 90%; } }
 
 .full {
   height: 100vw; }
@@ -183,8 +181,14 @@ nav {
       width: 300px; } }
   @media (min-width: 1024px) {
     .cause {
-      height: 200px;
-      width: 200px; } }
+      height: 400px;
+      width: 400px; } }
+  @media (min-width: 768px) {
+    .cause p {
+      font-size: 1em; } }
+  @media (min-width: 1024px) {
+    .cause p {
+      margin: 0; } }
 
 .uno {
   background-color: lightpink; }
@@ -269,16 +273,20 @@ nav {
       flex-direction: column;
       margin: 8px 0px; }
       .form-flex-container .my-form .form-group label {
-        margin: 4px 0px;
-        font-size: 0.75em; }
+        margin: 8px 0px;
+        font-size: 16px; }
       .form-flex-container .my-form .form-group input {
         height: 33px;
         border-radius: 5px;
         border-style: none;
-        padding: 10px; }
+        padding: 10px;
+        font-size: 16px; }
     .form-flex-container .my-form p {
       text-align: center;
-      font-size: 12px; }
+      font-size: 16px; }
+    .form-flex-container .my-form button {
+      font-size: 16px;
+      margin-top: 25px; }
 
 footer {
   position: relative;
@@ -323,6 +331,101 @@ footer a:nth-child(3) li {
     margin-bottom: 20px;
     font-size: 17px;
     line-height: 2; }
+
+.flex-grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%; }
+
+.cause-box {
+  height: 300px;
+  flex-basis: 100%;
+  position: relative; }
+  .cause-box .cause-info {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    text-align: center;
+    display: none; }
+    .cause-box .cause-info p {
+      padding: 20px;
+      color: white; }
+
+.cause-box:hover .overlay {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  display: block; }
+
+.one {
+  background: url(http://fillmurray.com/1000/500) center center no-repeat;
+  background-size: cover; }
+  @media (min-width: 1024px) {
+    .one {
+      flex-basis: 50%; } }
+
+.two {
+  background: url(http://fillmurray.com/400/500) center center no-repeat;
+  background-size: cover; }
+  @media (min-width: 768px) {
+    .two {
+      flex-basis: 50%; } }
+  @media (min-width: 1024px) {
+    .two {
+      flex-basis: 25%; } }
+
+.three {
+  background: url(http://fillmurray.com/700/500) center center no-repeat;
+  background-size: cover; }
+  @media (min-width: 768px) {
+    .three {
+      flex-basis: 50%; } }
+  @media (min-width: 1024px) {
+    .three {
+      flex-basis: 25%; } }
+
+.four {
+  background: url(http://fillmurray.com/601/500) center center no-repeat;
+  background-size: cover; }
+  @media (min-width: 768px) {
+    .four {
+      flex-basis: 50%; } }
+  @media (min-width: 1024px) {
+    .four {
+      flex-basis: 25%; } }
+
+.five {
+  background: url(http://fillmurray.com/500/500) center center no-repeat;
+  background-size: cover; }
+  @media (min-width: 768px) {
+    .five {
+      flex-basis: 50%; } }
+  @media (min-width: 1024px) {
+    .five {
+      flex-basis: 25%; } }
+
+.six {
+  background: url(http://fillmurray.com/1000/800) center center no-repeat;
+  background-size: cover; }
+  @media (min-width: 1024px) {
+    .six {
+      flex-basis: 50%; } }
+
+.mission {
+  text-align: center;
+  margin: 40px auto; }
+  @media (min-width: 1024px) {
+    .mission {
+      font-size: 1rem;
+      max-width: 75em;
+      margin: 60px auto; }
+      .mission p {
+        line-height: 2; } }
 
 .form-button {
   background-color: #ffa172;

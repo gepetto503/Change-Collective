@@ -1,5 +1,10 @@
 .main {
   padding: 20px;
+  @include desktop {
+
+    max-width: 90%;
+  };
+  margin: auto;
 }
 
 .full {
