@@ -118,7 +118,7 @@ namespace GroupProject
 
       while(rdr.Read())
       {
-        this._id = rdr.GetInt32(0);  
+        this._id = rdr.GetInt32(0);
       }
       if (rdr != null)
       {
@@ -128,6 +128,44 @@ namespace GroupProject
       {
         conn.Close();
       }
+    }
+
+    public static Organization Find(int id)
+    {
+      SqlConnection conn = DB.Connection();
+      conn.Open();
+
+      SqlCommand cmd = new SqlCommand("SELECT * FROM organizations WHERE id = @Id;", conn);
+      SqlParameter IdParam = new SqlParameter("@Id", id.ToString());
+
+      cmd.Parameters.Add(IdParam);
+      SqlDataReader rdr = cmd.ExecuteReader();
+
+      int foundId = 0;
+      string name = null;
+      string website = null;
+      string email = null;
+      string bio = null;
+
+      while(rdr.Read())
+      {
+        foundId = rdr.GetInt32(0);
+        name = rdr.GetString(1);
+        website = rdr.GetString(2);
+        email = rdr.GetString(3);
+        bio = rdr.GetString(4);
+      }
+      Organization foundOrganization = new Organization(name, website, email, bio, foundId);
+      if (rdr != null)
+      {
+        rdr.Close();
+      }
+      if (conn != null)
+      {
+        conn.Close();
+      }
+
+      return foundOrganization;
     }
 
     public static void DeleteAll()

@@ -27,8 +27,8 @@ namespace GroupProject
     public void Test_Override_ObjectsAreEqual()
     {
       //Arrange, Act
-      Organization organization1 = new Organization("SaveTheSquirrels", "SaveTheDolphins", "RunningOutOfThingsToSave", "SaveSomethingElse");
-      Organization organization2 = new Organization("SaveTheSquirrels", "SaveTheDolphins", "RunningOutOfThingsToSave", "SaveSomethingElse");
+      Organization organization1 = new Organization("SaveTheSquirrels", "www.savethesquirrels.org", "savethesquirrels@gmail.com", "Saving the Planet from evil dolphins");
+      Organization organization2 = new Organization("SaveTheSquirrels", "www.savethesquirrels.org", "savethesquirrels@gmail.com", "Saving the Planet from evil dolphins");
       //Assert
       Assert.Equal(organization1, organization2);
     }
@@ -37,7 +37,7 @@ namespace GroupProject
     public void Test_Save_SaveOrganizationToDB()
     {
       //Arrange
-      Organization testOrganization = new Organization("SaveTheDolphins", "RunningOutOfThingsToSave", "SaveSomethingElse", "Saving the Planet from Plant People.");
+      Organization testOrganization = new Organization("SaveTheDolphins", "www.savethedophins.org", "savethedolpins@gmail.com", "Saving the Planet from squirrel people.");
       testOrganization.Save();
       //Act
       List<Organization> result = Organization.GetAll();
@@ -45,6 +45,20 @@ namespace GroupProject
       //Assert
       Assert.Equal(testList, result);
     }
+
+    [Fact]
+    public void Test_Find_FindOrganizationInDb()
+    {
+      //Arrange
+      Organization testOrganization = new Organization("SaveTheDolphins","www.savethedophins.org", "savethedolpins@gmail.com", "Saving the Planet from squirrel people.");
+      testOrganization.Save();
+      //Act
+      Organization foundOrganization = Organization.Find(testOrganization.GetId());
+      //Assert
+      Assert.Equal(testOrganization, foundOrganization);
+    }
+
+
 
     public void Dispose()
     {
