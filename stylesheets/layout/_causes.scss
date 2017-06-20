@@ -21,7 +21,14 @@
   }
 }
 
+.overlay {
+  display: none;
+}
 
+.overlay button {
+  margin-bottom: 25px;
+  background-color: $color;
+}
 
 .cause-box:hover .overlay {
   @include size(100% 100%);
@@ -31,7 +38,13 @@
   top: 0;
   left: 0;
   z-index: 99;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  .grid-button:hover {
+    background-color: $color;
+    color: white;
+  }
 }
 
 .one {
