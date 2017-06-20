@@ -168,7 +168,7 @@ namespace GroupProject
       return foundOrganization;
     }
 
-    //Make a join table?
+    //Make join table?
     public void Update(string updateOrganizationInfo)
     {
       SqlConnection conn = DB.Connection();

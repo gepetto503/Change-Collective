@@ -59,19 +59,32 @@ namespace GroupProject
     }
 
     [Fact]
-    public void Test_Update_UpdatesOrganizationInDB()
+    public void Test_UpdateOrganizationNameInDB()
     {
       //Arrange
-      Organization testOrganization = new Organization("SaveTheMoistOwlet", "wwww.savethemoistowlet.com", "savethemoistowlet@gmail.com", "Save the Planet from evil humans who want to spray owlets with water.");
-      testOrganization.Save();
+      Organization testOrganizationName = new Organization("SaveTheMoistOwlet", "wwww.savethemoistowlet.com", "savethemoistowlet@gmail.com", "Save the Planet from evil humans who want to spray owlets with water.");
+      testOrganizationName.Save();
+      string updateOrganizationName = "SaveTheBirds";
       //Act
-      string updateEmail = "thestalebird@gmail.com";
-      testOrganization.Update(updateEmail);
-      string result = testOrganization.GetEmail();
+      testOrganizationName.Update(updateOrganizationName);
+      string resultName = testOrganizationName.GetName();
       //Assert
-      Assert.Equal(updateEmail, result);
+      Assert.Equal(updateOrganizationName, resultName);
     }
 
+    [Fact]
+    public void Test_UpdateOrganizationEmailInDB()
+    {
+      //Arrange
+      Organization testOrganizationEmail = new Organization("SaveTheMoistOwlet", "wwww.savethemoistowlet.com", "savethemoistowlet@gmail.com", "Save the Planet from evil humans who want to spray owlets with water.");
+      testOrganizationEmail.Save();
+      string updateOrganizationEmail = "savethebirds@gmail.com";
+      //Act
+      testOrganizationEmail.Update(updateOrganizationEmail);
+      string resultEmail = testOrganizationEmail.GetEmail();
+      //Assert
+      Assert.Equal(updateOrganizationEmail, resultEmail);
+    }
 
 
     public void Dispose()
