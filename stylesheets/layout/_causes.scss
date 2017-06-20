@@ -24,11 +24,11 @@
 .overlay {
   display: none;
 }
-
-.overlay button {
-  margin-bottom: 25px;
-  background-color: $color;
-}
+//
+// .overlay button {
+//   margin-bottom: 25px;
+//   // background-color: $color;
+// }
 
 .cause-box:hover .overlay {
   @include size(100% 100%);
@@ -37,15 +37,27 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 99;
+  z-index: 50;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  .grid-button:hover {
-    background-color: $color;
-    color: white;
-  }
 }
+
+.grid-button {
+  display: none;
+  margin-bottom: 25px;
+}
+
+.cause-box:hover .grid-button {
+  display: block;
+  z-index: 100;
+  position: absolute;
+  bottom: 10%;
+  right: 50%;
+  transform: translate(50%, 50%);
+}
+
+
 
 .one {
   background: url(http://fillmurray.com/1000/500) center center no-repeat;

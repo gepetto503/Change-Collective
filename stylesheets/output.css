@@ -446,11 +446,6 @@ footer a:nth-child(3) li {
   display: none;
 }
 
-.overlay button {
-  margin-bottom: 25px;
-  background-color: #ffa172;
-}
-
 .cause-box:hover .overlay {
   height: 100%;
   width: 100%;
@@ -459,14 +454,24 @@ footer a:nth-child(3) li {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 99;
+  z-index: 50;
   display: flex;
   justify-content: center;
   align-items: flex-end;
 }
-.cause-box:hover .overlay .grid-button:hover {
-  background-color: #ffa172;
-  color: white;
+
+.grid-button {
+  display: none;
+  margin-bottom: 25px;
+}
+
+.cause-box:hover .grid-button {
+  display: block;
+  z-index: 100;
+  position: absolute;
+  bottom: 10%;
+  right: 50%;
+  transform: translate(50%, 50%);
 }
 
 .one {
