@@ -24,6 +24,31 @@ namespace GroupProject
       Assert.Equal(result, 0);
     }
 
+    [Fact]
+    public void Test_Save_SavesCategoryToDb()
+    {
+      //Arrange, Act
+      Category testCategory = new Category("Environmental");
+      testCategory.Save();
+
+      List<Category> result = Category.GetAll();
+      List<Category> testList = new List<Category> {testCategory};
+
+      //Assert
+      Assert.Equal(result, testList);
+    }
+
+    [Fact]
+    public void Test_Find_FindsCategoryInDb()
+    {
+      //Arrange, Act
+      Category testCategory = new Category("Environmental");
+      testCategory.Save();
+      Category foundCategory = Category.Find(testCategory.GetId());
+
+      //Assert
+      Assert.Equal(testCategory, foundCategory);
+    }
 
     public void Dispose()
     {
