@@ -168,23 +168,33 @@ namespace GroupProject
       return foundOrganization;
     }
 
-    public void Update(string updateString)
+    //Make a join table?
+    public void Update(string updateOrganizationInfo)
     {
       SqlConnection conn = DB.Connection();
       conn.Open();
+      SqlConnection conn2 = DB.Connection();
+      conn2.Open();
 
-      SqlCommand cmd = new SqlCommand("UPDATE organizations SET email = @Email WHERE id = @Id;", conn);
+      SqlCommand cmd = new SqlCommand("UPDATE organizations SET name = @Name WHERE id = @Id;", conn);
+      SqlCommand cmd2 = new SqlCommand("UPDATE organizations SET email = @Email WHERE id = @Id;", conn2);
 
-      SqlParameter emailParam = new SqlParameter("@Email", updateString);
+      SqlParameter nameParm = new SqlParameter("@Name", updateOrganizationInfo);
+      SqlParameter emailParam = new SqlParameter("@Email", updateOrganizationInfo);
       SqlParameter idParam = new SqlParameter("@Id", this.GetId());
 
-      cmd.Parameters.Add(emailParam);
+      cmd.Parameters.Add(nameParm);
+      cmd2.Parameters.Add(emailParam);
       cmd.Parameters.Add(idParam);
 
-      this._email = updateString;
+      this._name = updateOrganizationInfo;
+      this._email = updateOrganizationInfo;
       cmd.ExecuteNonQuery();
       conn.Close();
+      conn2.Close();
     }
+
+
 
     public static void DeleteAll()
     {
