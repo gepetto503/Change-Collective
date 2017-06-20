@@ -71,10 +71,10 @@ namespace GroupProject
       _bio = newBio;
     }
 
-    // public override int GetHashCode()
-    // {
-    //   return this.GetName().GetHashCode();
-    // }
+    public override int GetHashCode()
+    {
+      return this.GetName().GetHashCode();
+    }
 
     public static List<User> GetAll()
     {
@@ -180,6 +180,45 @@ namespace GroupProject
         conn.Close();
       }
       return foundUser;
+    }
+
+    public void Update(string userInfo)
+    {
+      SqlConnection conn = DB.Connection();
+      conn.Open();
+
+      SqlCommand cmd = new SqlCommand("UPDATE users SET name = @NewName OUTPUT INSERTED.name WHERE id = @UserId; UPDATE users SET email = @NewEmail OUTPUT INSERTED.email WHERE id = @UserId; UPDATE users SET bio = @NewBio OUTPUT INSERTED.bio WHERE id = @UserId;", conn);
+
+      SqlParameter newNameParameter = new SqlParameter("@NewName", userInfo);
+      SqlParameter newEmailParameter = new SqlParameter("@NewEmail", userInfo);
+      SqlParameter newBioParameter = new SqlParameter("@NewBio", userInfo);
+      SqlParameter userIdParameter = new SqlParameter("@UserId", this.GetId());
+
+      cmd.Parameters.Add(newNameParameter);
+      cmd.Parameters.Add(newEmailParameter);
+      cmd.Parameters.Add(newBioParameter);
+      cmd.Parameters.Add(userIdParameter);
+
+      this._name = userInfo;
+      this._email = userInfo;
+      this._bio = userInfo;
+
+      SqlDataReader rdr = cmd.ExecuteReader();
+
+      while(rdr.Read())
+      {
+        this._name = rdr.GetString(0);
+      }
+
+      if (rdr != null)
+      {
+        rdr.Close();
+      }
+
+      if (conn != null)
+      {
+        conn.Close();
+      }
     }
 
     public static void DeleteAll()
