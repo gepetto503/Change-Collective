@@ -8,11 +8,8 @@ namespace GroupProject
   public class Organization
   {
     private int _id;
-    private string _name;
-    private string _website;
-    private string _email;
-    private string _bio;
-
+    private string _name, _website, _email, _bio;
+    
     public Organization(string Name, string Website, string Email, string Bio, int Id = 0)
     {
       _id = Id;

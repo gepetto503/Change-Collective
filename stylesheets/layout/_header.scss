@@ -1,21 +1,35 @@
 // Navigation
-.main_h {
+.navbar {
   position: fixed;
   max-height: 70px;
-  z-index: 999;
   width: 100%;
-  padding-top: 17px;
+  z-index: 999;
   background: none;
   overflow: hidden;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  padding: 15px;
   opacity: 0;
   top: -100px;
   padding-bottom: 6px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
   @include small {
     padding-top: 25px;
   }
+  .row {
+
+    width: 100%;
+
+    margin: 0 auto;
+    position: relative;
+    padding: 0 2%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+  }
 }
+
+
 
 //the reason the links are below the other header content on mobile is because the width of the nav element that actually holds them is 100%, so it breaks onto a new line.  on tablet and up the nav is a smaller percentage width that allows it to sit on the same line as the "logo"
 
@@ -35,27 +49,31 @@
 }
 
 .logo {
-  width: 50px;
+  // width: 50px;
   font-size: 25px;
   color: $color;
   text-transform: uppercase;
-  float: left;
-  display: block;
+  // float: left;
+  // display: block;
   margin-top: 0;
   line-height: 1;
   margin-bottom: 10px;
-  @include small {
-    float: none;
-  }
+  // @include small {
+  //   float: none;
+  // }
 }
 
+.back-nav {
+  @extend .logo;
+}
+
+
 nav {
-  float: right;
   width: 60%;
   @include small {
     width: 100%;
   }
-  
+
   li, h2 {
     font-size: 14px;
   }
@@ -95,10 +113,6 @@ nav {
   display: none;
   cursor: pointer;
   font-size: 20px;
-  position: absolute;
-  right: 22px;
-  top: 0;
-  width: 30px;
   -webkit-transition: all 200ms ease-in;
   -moz-transition: all 200ms ease-in;
   transition: all 200ms ease-in;
@@ -114,14 +128,6 @@ nav {
     background: $color;
     display: block;
   }
-}
-
-.row {
-  width: 100%;
-  max-width: 940px;
-  margin: 0 auto;
-  position: relative;
-  padding: 0 2%;
 }
 
 

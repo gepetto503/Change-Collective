@@ -1,0 +1,14 @@
+.form-button {
+  background-color: $color;
+  height: 30px;
+  width: 100%;
+  border-radius: 5px;
+  color: white;
+  border-style: none;
+  font-weight: bold;
+}
+
+.grid-button {
+  @extend .form-button;
+  width: 20% !important;
+}
