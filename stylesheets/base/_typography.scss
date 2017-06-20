@@ -4,21 +4,12 @@
   font-family: 'Junction';
 }
 
-
+p {
+  line-height: 1.5;
+}
 
 
 
 .highlight-text {
   color: $color
-}
-
-.cause p {
-  @include tablet {
-    font-size: 1em;
-  };
-  @include desktop {
-    font-size: .8em;
-    line-height: 1.2;
-    margin: 0;
-  };
 }
