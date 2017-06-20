@@ -46,6 +46,17 @@ namespace GroupProject
       Assert.Equal(testList, result);
     }
 
+    [Fact]
+    public void Test_Find_FindBankInfoInDB()
+    {
+      Transaction testTransaction = new Transaction("Bank of America", 100032);
+      testTransaction.Save();
+      //Act
+      Transaction foundTransaction = Transaction.Find(testTransaction.GetId());
+      //Assert
+      Assert.Equal(testTransaction, foundTransaction);
+    }
+    
     public void Dispose()
     {
       Transaction.DeleteAll();

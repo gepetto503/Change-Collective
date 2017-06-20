@@ -110,6 +110,41 @@ namespace GroupProject
       }
     }
 
+    public static Transaction Find(int id)
+    {
+      SqlConnection conn = DB.Connection();
+      conn.Open();
+
+      SqlCommand cmd = new SqlCommand("SELECT * FROM banks WHERE id = @BalanceId", conn);
+      SqlParameter transactionIdParam = new SqlParameter("@BalanceId", id.ToString());
+
+      cmd.Parameters.Add(transactionIdParam);
+
+      SqlDataReader rdr = cmd.ExecuteReader();
+
+      int foundTransactionId = 0;
+      string bankName = null;
+      decimal transaction = 0;
+
+      while(rdr.Read())
+      {
+        foundTransactionId = rdr.GetInt32(0);
+        bankName = rdr.GetString(1);
+        transaction = rdr.GetDecimal(2);
+      }
+      Transaction foundTransaction = new Transaction(bankName, transaction, foundTransactionId);
+      if(rdr != null)
+      {
+        rdr.Close();
+      }
+      if(conn != null)
+      {
+        conn.Close();
+      }
+
+      return foundTransaction;
+    }
+
     public static void DeleteAll()
     {
       SqlConnection conn = DB.Connection();
