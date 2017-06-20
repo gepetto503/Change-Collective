@@ -86,6 +86,21 @@ namespace GroupProject
       Assert.Equal(updateOrganizationEmail, resultEmail);
     }
 
+    [Fact]
+    public void Test_UpdateOrganizationBioInDB()
+    {
+      //Arrange
+      Organization testOrganizationBio = new Organization("SaveTheMoistOwlet", "wwww.savethemoistowlet.com", "savethemoistowlet@gmail.com", "Save the Planet from evil humans who want to burn things:(");
+      testOrganizationBio.Save();
+      string updateOrganizationBio = "Saving the planet.";
+      //Act
+      testOrganizationBio.Update(updateOrganizationBio);
+      string resultBio = testOrganizationBio.GetBio();
+      //Assert
+      Assert.Equal(updateOrganizationBio, resultBio);
+    }
+
+
 
     public void Dispose()
     {
