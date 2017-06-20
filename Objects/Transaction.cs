@@ -31,6 +31,27 @@ namespace GroupProject
       return _money;
     }
 
+    public override bool Equals(System.Object otherTransaction)
+    {
+      if(!(otherTransaction is Transaction))
+      {
+        return false;
+      }
+      else
+      {
+        Transaction newTransaction = (Transaction) otherTransaction;
+        bool idEquality = (this.GetId() == newTransaction.GetId());
+        bool nameEquality = (this.GetName() == newTransaction.GetName());
+        bool moneyEquality = (this.GetMoney() == newTransaction.GetMoney());
+        return (idEquality && nameEquality && moneyEquality);
+      }
+    }
+
+    public override int GetHashCode()
+    {
+      return this.GetName().GetHashCode();
+    }
+
     public static List<Transaction> GetAll()
     {
       List<Transaction> AllTransactions = new List<Transaction>{};

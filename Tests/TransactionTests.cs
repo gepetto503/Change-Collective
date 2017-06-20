@@ -23,6 +23,16 @@ namespace GroupProject
       Assert.Equal(0, result);
     }
 
+    [Fact]
+    public void Test_Override_ObjectsAreEqual()
+    {
+      //Arrange, Act
+      Transaction transaction1 = new Transaction("Bank of America", 1000);
+      Transaction transaction2 = new Transaction("Bank of America",  1000);
+      //Assert
+      Assert.Equal(transaction1, transaction2);
+    }
+
     public void Dispose()
     {
       Transaction.DeleteAll();
