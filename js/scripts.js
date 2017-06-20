@@ -1,11 +1,22 @@
 $(function(){
-  // Sticky Header: makes navbar appear after you scroll down 100(px?), and stick to the top of the window
+
+  // Sticky Header: makes a fixed navbar appear after you scroll down 100 units
+    //.navbar has 0% opacity to start with
+    //class 'sticky' gives the fixed navbar 100% opacity
+    //this js dynamically applies 'sticky' class to navbar in certain circumstances
+  if ($('.navbar').hasClass('fixed')) { //applies sticky right off the bat if navbar has a class called fixed in the initial html (so put class of fixed on navbar on html pages that you want the navbar to always be visible)
+    $('.navbar').addClass('sticky');
+  }
+
+  //scroll function causes navbar to appear and dissapear on pages that don't have the fixed class on navbar
   $(window).scroll(function() {
       if ($(window).scrollTop() > 100) {
-          $('.navbar').addClass('sticky');
-      } else {
-          $('.navbar').removeClass('sticky');
+        $('.navbar').addClass('sticky');
+      } else if (!$('.navbar').hasClass('fixed')) {
+        $('.navbar').removeClass('sticky');
       }
+
+
   });
 
   // Mobile Navigation: when you click the menu hamburger...
@@ -44,6 +55,8 @@ $(function(){
 	},
   function(){
   	$(".cause-info", this).css("display", "none");
-});
+  });
+
+
 
 });
