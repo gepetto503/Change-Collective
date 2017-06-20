@@ -29,26 +29,59 @@
         </div> <!-- / row -->
 
     </header>
+    <div class="main">
+      <div class="carousel-area">
+        <div class="carousel flex-child">
+          <input type="radio" id="carousel-1" name="carousel[]" checked>
+          <input type="radio" id="carousel-2" name="carousel[]">
+          <input type="radio" id="carousel-3" name="carousel[]">
+          <input type="radio" id="carousel-4" name="carousel[]">
+          <input type="radio" id="carousel-5" name="carousel[]">
+          <ul class="carousel__items">
+            <li class="carousel__item"><img src="http://fillmurray.com/500/500" alt=""></li>
+            <li class="carousel__item"><img src="http://fillmurray.com/500/501" alt=""></li>
+            <li class="carousel__item"><img src="http://fillmurray.com/500/502" alt=""></li>
+            <li class="carousel__item"><img src="http://fillmurray.com/500/503" alt=""></li>
+            <li class="carousel__item"><img src="http://fillmurray.com/500/504" alt=""></li>
+          </ul>
+          <div class="carousel__prev">
+            <label for="carousel-1"></label>
+            <label for="carousel-2"></label>
+            <label for="carousel-3"></label>
+            <label for="carousel-4"></label>
+            <label for="carousel-5"></label>
+          </div>
+          <div class="carousel__next">
+            <label for="carousel-1"></label>
+            <label for="carousel-2"></label>
+            <label for="carousel-3"></label>
+            <label for="carousel-4"></label>
+            <label for="carousel-5"></label>
+          </div>
+          <div class="carousel__nav">
+            <label for="carousel-1"></label>
+            <label for="carousel-2"></label>
+            <label for="carousel-3"></label>
+            <label for="carousel-4"></label>
+            <label for="carousel-5"></label>
+          </div>
+        </div>
+      </div><!--carousel area-->
 
-    <div class="main full">
+      <div class="donate-to-causes"><!--this is a flex parent-->
+        <div class="donate-text flex-child">
+          <h1>Name of Cause</h1>
+          <p>Full description of cause including the organization's mission statement, founder, when they started, etc. etc. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
 
-      <div class="gallery-of-causes">
-        <h1>CAROUSEL GOES HERE</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-      <div class="donate-to-causes">
-        <h1>USER INTERFACE FOR DONATIONS GOES HERE</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <!-- Empty form, slider for dollar amount will go around here -->
-        <form class="" action="index.html" method="post">
-          <input class="slider" type="range">
-          <button class="form-button" type="submit" name="button">Donate</button>
-        </form>
-      </div>
-      <!--content-->
-
-    </div>
-
+        <div class="donate-form flex-child">
+          <form class="" action="index.html" method="post">
+            <input class="slider" type="range">
+            <button class="form-button" type="submit" name="button">Donate</button>
+          </form>
+        </div>
+      </div><!--donate to causes-->
+    </div><!--main-->
     <footer>
       <a href="#"><li>LinkedIn</li></a>
       <a href="#"><li>Github</li></a>
