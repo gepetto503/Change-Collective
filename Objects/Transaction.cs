@@ -26,7 +26,7 @@ namespace GroupProject
     {
       return _name;
     }
-    public decimal GetMoney()
+    public decimal GetTransaction()
     {
       return _money;
     }
@@ -42,7 +42,7 @@ namespace GroupProject
         Transaction newTransaction = (Transaction) otherTransaction;
         bool idEquality = (this.GetId() == newTransaction.GetId());
         bool nameEquality = (this.GetName() == newTransaction.GetName());
-        bool moneyEquality = (this.GetMoney() == newTransaction.GetMoney());
+        bool moneyEquality = (this.GetTransaction() == newTransaction.GetTransaction());
         return (idEquality && nameEquality && moneyEquality);
       }
     }
