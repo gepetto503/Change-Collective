@@ -7,23 +7,24 @@
 }
 
 .profile-image {
+  @include desktop;
   flex-basis: 40%;
-  height: 300px;
-  width: 300px;
+  margin-top: 25px;
+  max-height: 300px;
+  max-width: 300px;
   border: 1px solid red;
   background-image: url(http://lorempixel.com/300/300/);
   @include small {
     height: 250px;
-    width: 250px;
-    background-image: url(http://lorempixel.com/250/250/);
+    max-width: 250px;
   }
 }
 
 .profile-bio {
+  @include desktop;
   padding: 20px;
   flex-basis: 60%;
   width: 600px;
-  height: 300px;
   border: 1px solid blue;
   @include small {
     flex-basis: 100%;
@@ -31,21 +32,34 @@
 }
 
 .profile-causes {
-  padding: 20px;
+  @include desktop;
+  padding: 5px 10px;
   flex-basis: 100%;
   width: 900px;
-  height: 300px;
   border: 1px solid green;
+  @include tablet {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    ul {
+      flex-basis: 50%;
+      text-align: center;
+    }
+  }
   @include small {
     flex-basis: 100%;
-  }
-  li {
-    margin: 5px;
+    margin-bottom: 15px;
+    li {
+      margin: 5px;
+      text-align: center;
+    }
   }
 }
-// problems when resizing screen
+
 textarea {
-  // height: 90px;
-  // width: 400px;
   width: 100%;
+  height: 50px;
+  resize: none;
+  border-radius: 5px;
+  box-shadow: inset 0px 2px 12px 0 rgba(0, 0, 0, .25)
 }
