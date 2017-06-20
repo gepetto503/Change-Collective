@@ -7,3 +7,8 @@
   border-style: none;
   font-weight: bold;
 }
+
+.grid-button {
+  @extend .form-button;
+  width: 20% !important;
+}

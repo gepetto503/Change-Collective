@@ -36,4 +36,14 @@ $(function(){
       }, 500);
       event.preventDefault();
   });
+
+
+  //gallery hover effect
+  $(".cause-box").hover(function(){
+  	$(".cause-info", this).css("display", "block");
+	},
+  function(){
+  	$(".cause-info", this).css("display", "none");
+});
+
 });

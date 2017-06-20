@@ -41,21 +41,12 @@ li {
   font-family: 'Junction';
 }
 
-.highlight-text {
-  color: #ffa172;
+p {
+  line-height: 1.5;
 }
 
-@media (min-width: 768px) {
-  .cause p {
-    font-size: 1em;
-  }
-}
-@media (min-width: 1024px) {
-  .cause p {
-    font-size: .8em;
-    line-height: 1.2;
-    margin: 0;
-  }
+.highlight-text {
+  color: #ffa172;
 }
 
 @font-face {
@@ -205,6 +196,12 @@ nav ul a {
 
 .main {
   padding: 20px;
+  margin: auto;
+}
+@media (min-width: 1024px) {
+  .main {
+    max-width: 90%;
+  }
 }
 
 .full {
@@ -232,8 +229,18 @@ nav ul a {
 }
 @media (min-width: 1024px) {
   .cause {
-    height: 200px;
-    width: 200px;
+    height: 400px;
+    width: 400px;
+  }
+}
+@media (min-width: 768px) {
+  .cause p {
+    font-size: 1em;
+  }
+}
+@media (min-width: 1024px) {
+  .cause p {
+    margin: 0;
   }
 }
 
@@ -342,18 +349,23 @@ nav ul a {
   margin: 8px 0px;
 }
 .form-flex-container .my-form .form-group label {
-  margin: 4px 0px;
-  font-size: 0.75em;
+  margin: 8px 0px;
+  font-size: 16px;
 }
 .form-flex-container .my-form .form-group input {
   height: 33px;
   border-radius: 5px;
   border-style: none;
   padding: 10px;
+  font-size: 16px;
 }
 .form-flex-container .my-form p {
   text-align: center;
-  font-size: 12px;
+  font-size: 16px;
+}
+.form-flex-container .my-form button {
+  font-size: 16px;
+  margin-top: 25px;
 }
 
 footer {
@@ -407,11 +419,182 @@ footer a:nth-child(3) li {
   line-height: 2;
 }
 
+.flex-grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.cause-box {
+  height: 300px;
+  flex-basis: 100%;
+  position: relative;
+}
+.cause-box .cause-info {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  text-align: center;
+  display: none;
+}
+.cause-box .cause-info p {
+  padding: 20px;
+  color: white;
+}
+
+.overlay {
+  display: none;
+}
+
+.cause-box:hover .overlay {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.grid-button {
+  display: none;
+  margin-bottom: 25px;
+}
+
+.cause-box:hover .grid-button {
+  display: block;
+  z-index: 100;
+  position: absolute;
+  bottom: 10%;
+  right: 50%;
+  transform: translate(50%, 50%);
+}
+
+.one {
+  background: url(http://fillmurray.com/1000/500) center center no-repeat;
+  background-size: cover;
+}
+@media (min-width: 1024px) {
+  .one {
+    flex-basis: 50%;
+  }
+}
+
+.two {
+  background: url(http://fillmurray.com/400/500) center center no-repeat;
+  background-size: cover;
+}
+@media (min-width: 768px) {
+  .two {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .two {
+    flex-basis: 25%;
+  }
+}
+
+.three {
+  background: url(http://fillmurray.com/700/500) center center no-repeat;
+  background-size: cover;
+}
+@media (min-width: 768px) {
+  .three {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .three {
+    flex-basis: 25%;
+  }
+}
+
+.four {
+  background: url(http://fillmurray.com/601/500) center center no-repeat;
+  background-size: cover;
+}
+@media (min-width: 768px) {
+  .four {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .four {
+    flex-basis: 25%;
+  }
+}
+
+.five {
+  background: url(http://fillmurray.com/500/500) center center no-repeat;
+  background-size: cover;
+}
+@media (min-width: 768px) {
+  .five {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .five {
+    flex-basis: 25%;
+  }
+}
+
+.six {
+  background: url(http://fillmurray.com/1000/800) center center no-repeat;
+  background-size: cover;
+}
+@media (min-width: 1024px) {
+  .six {
+    flex-basis: 50%;
+  }
+}
+
+.mission {
+  text-align: center;
+  margin: 40px auto;
+}
+@media (min-width: 1024px) {
+  .mission {
+    font-size: 1rem;
+    max-width: 75em;
+    margin: 60px auto;
+  }
+  .mission p {
+    line-height: 2;
+  }
+}
+
 section {
   margin-top: 80px;
 }
 
-.form-button {
+.gallery-of-causes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid red;
+  height: 400px;
+  margin-top: 100px;
+}
+
+.donate-to-causes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 1px solid blue;
+  height: 400px;
+}
+
+.slider {
+  width: 50%;
+}
+
+.form-button, .grid-button {
   background-color: #ffa172;
   height: 30px;
   width: 100%;
@@ -419,6 +602,10 @@ section {
   color: white;
   border-style: none;
   font-weight: bold;
+}
+
+.grid-button {
+  width: 20% !important;
 }
 
 /*# sourceMappingURL=output.css.map */

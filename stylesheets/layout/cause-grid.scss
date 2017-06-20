@@ -18,10 +18,23 @@
     @include size(300px 300px);
   }
   @include desktop {
-    @include size (200px 200px);
+    @include size(400px 400px);
+  }
+  p {
+    @include tablet {
+      font-size: 1em;
+    };
+    @include desktop {
+      // font-size: .8em;
+      // line-height: 1.2;
+      margin: 0;
+    };
   }
 
 }
+
+
+
 
 .uno {
   background-color: lightpink;
