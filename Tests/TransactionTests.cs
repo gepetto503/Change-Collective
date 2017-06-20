@@ -33,6 +33,19 @@ namespace GroupProject
       Assert.Equal(transaction1, transaction2);
     }
 
+    [Fact]
+    public void Test_Save_SaveTransactionToDB()
+    {
+      //Arrange
+      Transaction testTransaction = new Transaction("Bank of America", 1023);
+      testTransaction.Save();
+      //Act
+      List<Transaction> result = Transaction.GetAll();
+      List<Transaction> testList = new List<Transaction>{testTransaction};
+      //Assert
+      Assert.Equal(testList, result);
+    }
+
     public void Dispose()
     {
       Transaction.DeleteAll();

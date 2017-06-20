@@ -66,7 +66,7 @@ namespace GroupProject
       {
         int id = rdr.GetInt32(0);
         string name = rdr.GetString(1);
-        decimal money = rdr.GetInt32(2);
+        decimal money = rdr.GetDecimal(2);
         Transaction newTransaction = new Transaction(name, money, id);
         AllTransactions.Add(newTransaction);
       }
@@ -80,6 +80,34 @@ namespace GroupProject
       }
 
       return AllTransactions;
+    }
+
+    public void Save()
+    {
+      SqlConnection conn = DB.Connection();
+      conn.Open();
+
+      SqlCommand cmd = new SqlCommand("INSERT INTO banks (name, balance) OUTPUT INSERTED.id VALUES (@Name, @Balance);", conn);
+      SqlParameter nameParam = new SqlParameter("@Name", this.GetName());
+      SqlParameter balanceParam = new SqlParameter("@Balance", this.GetTransaction());
+
+      cmd.Parameters.Add(nameParam);
+      cmd.Parameters.Add(balanceParam);
+
+      SqlDataReader rdr = cmd.ExecuteReader();
+
+      while(rdr.Read())
+      {
+        this._id = rdr.GetInt32(0);
+      }
+      if (rdr != null)
+      {
+        rdr.Close();
+      }
+      if (conn != null)
+      {
+        conn.Close();
+      }
     }
 
     public static void DeleteAll()
