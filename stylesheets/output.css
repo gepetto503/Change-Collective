@@ -1,50 +1,611 @@
-/*
-Error: Invalid CSS after "  'layout/hero',": expected file to import (string or url()), was "<<<<<<< HEAD"
-        on line 36 of main.scss
+@keyframes bouncy {
+  0% {
+    font-size: 14px;
+  }
+  50% {
+    font-size: 18px;
+  }
+  100% {
+    font-size: 14px;
+  }
+}
+html {
+  box-sizing: border-box;
+}
 
-31:   'layout/cause-grid',
-32:   'layout/about',
-33:   'layout/form',
-34:   'layout/footer',
-35:   'layout/hero',
-36: <<<<<<< HEAD
-37:   'layout/causes',
-38:   'layout/mission',
-39:   'layout/sign-in';
-40: =======
-41:   'layout/sign-in',
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
-Backtrace:
-main.scss:36
-/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1207:in `expected'
-/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1137:in `expected'
-/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1117:in `expr!'
-/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:371:in `block in import_directive'
-/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:370:in `loop'
-/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:370:in `import_directive'
-/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:222:in `special_directive'
-/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:197:in `directive'
-/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:684:in `block_child'
-/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:677:in `block_contents'
-/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:125:in `stylesheet'
-/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:41:in `parse'
-/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/engine.rb:406:in `_to_tree'
-/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/engine.rb:381:in `_render_with_sourcemap'
-/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/engine.rb:298:in `render_with_sourcemap'
-/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
-/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `each'
-/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:473:in `on_file_changed'
-/usr/local/lib/ruby/gems/2.2.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:331:in `block in watch'
-/usr/local/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:282:in `call'
-/usr/local/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:282:in `_process_changes'
-/usr/local/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:246:in `block in _wait_for_changes'
-/usr/local/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:229:in `loop'
-/usr/local/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:229:in `_wait_for_changes'
-/usr/local/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:318:in `block in _start_wait_thread'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"  'layout/hero',\": expected file to import (string or url()), was \"<<<<<<< HEAD\"\A         on line 36 of main.scss\A \A 31:   'layout/cause-grid',\A 32:   'layout/about',\A 33:   'layout/form',\A 34:   'layout/footer',\A 35:   'layout/hero',\A 36: <<<<<<< HEAD\A 37:   'layout/causes',\A 38:   'layout/mission',\A 39:   'layout/sign-in';\A 40: =======\A 41:   'layout/sign-in',"; }
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+* {
+  font-family: 'Junction';
+}
+
+p {
+  line-height: 1.5;
+}
+
+.highlight-text {
+  color: #ffa172;
+}
+
+@font-face {
+  font-family: 'Junction';
+  src: url("fonts/junction-bold.eot");
+  src: url("fonts/junction-bold.eot?#iefix") format("embedded-opentype"), url("fonts/junction-bold.woff") format("woff"), url("fonts/junction-bold.ttf") format("truetype"), url("fonts/junction-bold.svg#junctionbold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Junction';
+  src: url("fonts/junction-light.eot");
+  src: url("fonts/junction-light.eot?#iefix") format("embedded-opentype"), url("fonts/junction-light.woff") format("woff"), url("fonts/junction-light.ttf") format("truetype"), url("fonts/junction-light.svg#junctionlight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Junction';
+  src: url("fonts/junction-regular.eot");
+  src: url("fonts/junction-regular.eot?#iefix") format("embedded-opentype"), url("fonts/junction-regular.woff") format("woff"), url("fonts/junction-regular.ttf") format("truetype"), url("fonts/junction-regular.svg#junctionregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.navbar {
+  position: fixed;
+  max-height: 70px;
+  width: 100%;
+  z-index: 999;
+  background: none;
+  overflow: hidden;
+  padding: 15px;
+  opacity: 0;
+  top: -100px;
+  padding-bottom: 6px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+@media only screen and (max-width: 766px) {
+  .navbar {
+    padding-top: 25px;
+  }
+}
+.navbar .row {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 2%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.open-nav {
+  max-height: 400px !important;
+}
+.open-nav .mobile-toggle {
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+}
+
+.sticky {
+  background-color: rgba(255, 255, 255, 0.93);
+  opacity: 1;
+  top: 0px;
+  border-bottom: 1px solid white;
+}
+
+.logo, .back-nav {
+  font-size: 25px;
+  color: #ffa172;
+  text-transform: uppercase;
+  margin-top: 0;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+nav {
+  width: 60%;
+}
+@media only screen and (max-width: 766px) {
+  nav {
+    width: 100%;
+  }
+}
+nav li, nav h2 {
+  font-size: 14px;
+}
+nav ul {
+  list-style: none;
+  overflow: hidden;
+  text-align: right;
+  float: right;
+}
+@media only screen and (max-width: 766px) {
+  nav ul {
+    padding-top: 10px;
+    margin-bottom: 22px;
+    float: left;
+    text-align: center;
+    width: 100%;
+  }
+}
+nav ul li {
+  display: inline-block;
+  margin-left: 35px;
+  line-height: 1.5;
+}
+@media only screen and (max-width: 766px) {
+  nav ul li {
+    width: 100%;
+    padding: 7px 0;
+    margin: 0;
+  }
+}
+nav ul a {
+  color: #888888;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.mobile-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 20px;
+  -webkit-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+@media only screen and (max-width: 766px) {
+  .mobile-toggle {
+    display: block;
+  }
+}
+.mobile-toggle span {
+  width: 30px;
+  height: 4px;
+  margin-bottom: 6px;
+  border-radius: 1000px;
+  background: #ffa172;
+  display: block;
+}
+
+.content {
+  padding: 50px 2% 250px;
+}
+
+.main {
+  padding: 20px;
+  margin: auto;
+}
+@media (min-width: 1024px) {
+  .main {
+    max-width: 90%;
+  }
+}
+
+.full {
+  height: 100vw;
+}
+
+.flex-container {
+  font-size: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cause {
+  height: 64vw;
+  width: 64vw;
+  margin: 20px;
+  flex-basis: auto;
+}
+@media (min-width: 768px) {
+  .cause {
+    height: 300px;
+    width: 300px;
+  }
+}
+@media (min-width: 1024px) {
+  .cause {
+    height: 400px;
+    width: 400px;
+  }
+}
+@media (min-width: 768px) {
+  .cause p {
+    font-size: 1em;
+  }
+}
+@media (min-width: 1024px) {
+  .cause p {
+    margin: 0;
+  }
+}
+
+.uno {
+  background-color: lightpink;
+}
+
+.dos {
+  background-color: lightblue;
+}
+
+.tres {
+  background-color: lightgreen;
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+  perspective: 1000px;
+}
+
+/* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+  transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+  width: 100%;
+}
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+.front img {
+  width: 100%;
+}
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
+  padding: 20px;
+}
+
+.about-flex-container {
+  padding: 1em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.about-flex-container .image {
+  flex-basis: 100%;
+}
+@media (min-width: 768px) {
+  .about-flex-container .image {
+    flex-basis: 30%;
+  }
+}
+.about-flex-container .image img {
+  width: 100%;
+}
+.about-flex-container p {
+  padding: 1em;
+  flex-basis: 100%;
+}
+@media (min-width: 768px) {
+  .about-flex-container p {
+    margin-left: 40px;
+    flex-basis: 40%;
+  }
+}
+
+.form-flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-flex-container .my-form {
+  background-color: lightgrey;
+  border-radius: 5px;
+  padding: 30px;
+  width: 100%;
+  max-width: 370px;
+}
+.form-flex-container .my-form .form-group {
+  padding: 3px 0px;
+  display: flex;
+  flex-direction: column;
+  margin: 8px 0px;
+}
+.form-flex-container .my-form .form-group label {
+  margin: 8px 0px;
+  font-size: 16px;
+}
+.form-flex-container .my-form .form-group input {
+  height: 33px;
+  border-radius: 5px;
+  border-style: none;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-flex-container .my-form p {
+  text-align: center;
+  font-size: 16px;
+}
+.form-flex-container .my-form button {
+  font-size: 16px;
+  margin-top: 25px;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  margin-top: 40px;
+  padding-top: 15px;
+  background-color: #262626;
+  display: flex;
+  justify-content: center;
+}
+footer li {
+  margin: auto 10px;
+  padding-right: 20px;
+  border-right: 1px solid white;
+}
+
+footer a:nth-child(3) li {
+  border-right: none;
+}
+
+.hero {
+  background: #333 url(../images/hero.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  letter-spacing: 2px;
+  padding: 40px;
+}
+.hero h1 {
+  text-align: center;
+  font-size: 60px;
+  color: white;
+}
+.hero span {
+  font-size: 25px;
+  line-height: 1;
+  color: #beffb7;
+}
+.hero p {
+  margin-bottom: 20px;
+  font-size: 17px;
+  line-height: 2;
+}
+
+.flex-grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.cause-box {
+  height: 300px;
+  flex-basis: 100%;
+  position: relative;
+}
+.cause-box .cause-info {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  text-align: center;
+  display: none;
+}
+.cause-box .cause-info p {
+  padding: 20px;
+  color: white;
+}
+
+.overlay {
+  display: none;
+}
+
+.cause-box:hover .overlay {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.grid-button {
+  display: none;
+  margin-bottom: 25px;
+}
+
+.cause-box:hover .grid-button {
+  display: block;
+  z-index: 100;
+  position: absolute;
+  bottom: 10%;
+  right: 50%;
+  transform: translate(50%, 50%);
+}
+
+.one {
+  background: url(http://fillmurray.com/1000/500) center center no-repeat;
+  background-size: cover;
+}
+@media (min-width: 1024px) {
+  .one {
+    flex-basis: 50%;
+  }
+}
+
+.two {
+  background: url(http://fillmurray.com/400/500) center center no-repeat;
+  background-size: cover;
+}
+@media (min-width: 768px) {
+  .two {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .two {
+    flex-basis: 25%;
+  }
+}
+
+.three {
+  background: url(http://fillmurray.com/700/500) center center no-repeat;
+  background-size: cover;
+}
+@media (min-width: 768px) {
+  .three {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .three {
+    flex-basis: 25%;
+  }
+}
+
+.four {
+  background: url(http://fillmurray.com/601/500) center center no-repeat;
+  background-size: cover;
+}
+@media (min-width: 768px) {
+  .four {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .four {
+    flex-basis: 25%;
+  }
+}
+
+.five {
+  background: url(http://fillmurray.com/500/500) center center no-repeat;
+  background-size: cover;
+}
+@media (min-width: 768px) {
+  .five {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .five {
+    flex-basis: 25%;
+  }
+}
+
+.six {
+  background: url(http://fillmurray.com/1000/800) center center no-repeat;
+  background-size: cover;
+}
+@media (min-width: 1024px) {
+  .six {
+    flex-basis: 50%;
+  }
+}
+
+.mission {
+  text-align: center;
+  margin: 40px auto;
+}
+@media (min-width: 1024px) {
+  .mission {
+    font-size: 1rem;
+    max-width: 75em;
+    margin: 60px auto;
+  }
+  .mission p {
+    line-height: 2;
+  }
+}
+
+section {
+  margin-top: 80px;
+}
+
+.gallery-of-causes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid red;
+  height: 400px;
+  margin-top: 100px;
+}
+
+.donate-to-causes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 1px solid blue;
+  height: 400px;
+}
+
+.slider {
+  width: 50%;
+}
+
+.form-button, .grid-button {
+  background-color: #ffa172;
+  height: 30px;
+  width: 100%;
+  border-radius: 5px;
+  color: white;
+  border-style: none;
+  font-weight: bold;
+}
+
+.grid-button {
+  width: 20% !important;
+}
+
+/*# sourceMappingURL=output.css.map */
