@@ -168,6 +168,24 @@ namespace GroupProject
       return foundOrganization;
     }
 
+    public void Update(string updateString)
+    {
+      SqlConnection conn = DB.Connection();
+      conn.Open();
+
+      SqlCommand cmd = new SqlCommand("UPDATE organizations SET email = @Email WHERE id = @Id;", conn);
+
+      SqlParameter emailParam = new SqlParameter("@Email", updateString);
+      SqlParameter idParam = new SqlParameter("@Id", this.GetId());
+
+      cmd.Parameters.Add(emailParam);
+      cmd.Parameters.Add(idParam);
+
+      this._email = updateString;
+      cmd.ExecuteNonQuery();
+      conn.Close();
+    }
+
     public static void DeleteAll()
     {
       SqlConnection conn = DB.Connection();

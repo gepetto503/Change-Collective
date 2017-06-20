@@ -58,6 +58,20 @@ namespace GroupProject
       Assert.Equal(testOrganization, foundOrganization);
     }
 
+    [Fact]
+    public void Test_Update_UpdatesOrganizationInDB()
+    {
+      //Arrange
+      Organization testOrganization = new Organization("SaveTheMoistOwlet", "wwww.savethemoistowlet.com", "savethemoistowlet@gmail.com", "Save the Planet from evil humans who want to spray owlets with water.");
+      testOrganization.Save();
+      //Act
+      string updateEmail = "thestalebird@gmail.com";
+      testOrganization.Update(updateEmail);
+      string result = testOrganization.GetEmail();
+      //Assert
+      Assert.Equal(updateEmail, result);
+    }
+
 
 
     public void Dispose()
