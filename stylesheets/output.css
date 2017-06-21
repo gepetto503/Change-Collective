@@ -500,7 +500,9 @@ section {
 }
 
 .profile-content {
-  border: 2px solid brown;
+  margin-top: 80px;
+  background-color: lightgrey;
+  border-radius: 5px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -508,16 +510,22 @@ section {
 
 .profile-image {
   flex-basis: 40%;
-  margin-top: 25px;
+  border-radius: 50%;
+  margin: 25px 25px 0 0;
   max-height: 300px;
   max-width: 300px;
-  border: 1px solid red;
   background-image: url(http://lorempixel.com/300/300/);
+}
+@media (min-width: 768px) {
+  .profile-image {
+    height: 250px;
+    max-width: 250px;
+  }
 }
 @media only screen and (max-width: 766px) {
   .profile-image {
     height: 250px;
-    max-width: 250px;
+    min-width: 250px;
   }
 }
 
@@ -525,7 +533,6 @@ section {
   padding: 20px;
   flex-basis: 60%;
   width: 600px;
-  border: 1px solid blue;
 }
 @media only screen and (max-width: 766px) {
   .profile-bio {
@@ -534,10 +541,50 @@ section {
 }
 
 .profile-causes {
+  display: flex;
+  flex-wrap: wrap;
   padding: 5px 10px;
   flex-basis: 100%;
   width: 900px;
-  border: 1px solid green;
+  justify-content: center;
+}
+.profile-causes .profile-feed {
+  border: 1px solid grey;
+  border-radius: 5px;
+  box-shadow: 0px 2px 12px 0 rgba(0, 0, 0, 0.25);
+  max-height: 100px;
+  display: flex;
+  flex-basis: 33%;
+  margin: 50px 50px 0 50px;
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .profile-causes .profile-feed {
+    max-height: 300px;
+  }
+}
+@media only screen and (max-width: 766px) {
+  .profile-causes .profile-feed {
+    max-height: 300px;
+  }
+}
+.profile-causes .feed-image {
+  height: 100px;
+  width: 100px;
+  margin: 10px 5px 0 5px;
+  align-self: center;
+  background-image: url(http://lorempixel.com/90/90/cats);
+  background-repeat: no-repeat;
+}
+@media (min-width: 768px) {
+  .profile-causes .feed-image {
+    align-self: center;
+  }
+}
+@media only screen and (max-width: 766px) {
+  .profile-causes .feed-image {
+    align-self: center;
+  }
 }
 @media (min-width: 768px) {
   .profile-causes {
