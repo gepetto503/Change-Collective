@@ -19,6 +19,31 @@
     flex-basis: 40%;
     margin: 50px 50px 0 50px;
     background-color: #fff;
+    // img {
+    //   background-image: url(../images/heart.png);
+    //   background-repeat: no-repeat;
+    //   background-position: center;
+    // }
+
+    // I CANT GET THE INITAL IMAGE TO HIDE WHEN I HOVER
+    
+    .social-icon {
+      height: 24px;
+      width: 24px;
+      display: inline-block;
+    }
+    .feed-icon1:hover {
+      // height: 24px;
+      // width: 24px;
+      background-image: url(../images/heart_red.png);
+      background-repeat: no-repeat;
+    }
+    .feed-icon2:hover {
+      // height: 24px;
+      // width: 24px;
+      background-image: url(../images/comment_red.png);
+      background-repeat: no-repeat;
+    }
     @include tablet {
       max-height: 300px;
     }
