@@ -57,12 +57,9 @@
   transform: translate(50%, 50%);
 }
 
-
-
 .one {
   background: url(http://fillmurray.com/1000/500) center center no-repeat;
   background-size: cover;
-
   @include desktop {
     flex-basis: 50%;
   };
