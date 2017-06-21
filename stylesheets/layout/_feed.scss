@@ -4,39 +4,41 @@
   background-color: lightgrey;
   border-radius: 5px;
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   justify-content: center;
-}
-
-.feed {
-  border: 1px solid grey;
-  border-radius: 5px;
-  box-shadow: 0px 2px 12px 0 rgba(0, 0, 0, .25);
-  max-height:100px;
-  display: flex;
-  flex-basis: 40%;
-  margin: 50px 50px 0 50px;
-  background-color: #fff;
-  @include tablet {
-    max-height: 300px;
+  align-items: center;
+  .feed {
+    @include desktop;
+    border: 1px solid grey;
+    border-radius: 5px;
+    box-shadow: 0px 2px 12px 0 rgba(0, 0, 0, .25);
+    max-height:100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-basis: 40%;
+    margin: 50px 50px 0 50px;
+    background-color: #fff;
+    @include tablet {
+      max-height: 300px;
+    }
+    @include small {
+      max-height: 300px;
+    }
   }
-  @include small {
-    max-height: 300px;
-  }
-}
-
-.mainfeed-image {
-  height: 100px;
-  width: 100px;
-  margin: 10px 5px 0 5px;
-  align-self: center;
-  background-image: url(http://lorempixel.com/90/90/cats);
-  background-repeat: no-repeat;
-  @include tablet {
+  .mainfeed-image {
+    height: 100px;
+    width: 100px;
+    margin: 10px 5px 0 5px;
     align-self: center;
-  }
-  @include small {
-    align-self: center;
+    background-image: url(http://lorempixel.com/90/90/cats);
+    background-repeat: no-repeat;
+    @include tablet {
+      align-self: center;
+    }
+    @include small {
+      align-self: center;
+    }
   }
   @include tablet {
     display: flex;
@@ -45,8 +47,8 @@
     ul {
       flex-basis: 50%;
       text-align: center;
-      }
     }
+  }
   @include small {
     flex-basis: 100%;
     margin-bottom: 15px;
