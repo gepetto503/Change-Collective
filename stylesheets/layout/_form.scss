@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center; //centers form groups horizontally
+}
 
-<<<<<<< HEAD
 .my-form {
   background-color: lightgrey;
   border-radius: 5px;
@@ -11,14 +11,14 @@
   width: 100%;
   max-width: 370px;
 
-.form-group {
-  padding: 3px 0px;
-  display: flex;
-  flex-direction: column;
-  margin: 8px 0px;
-  label {
+  .form-group {
+    padding: 3px 0px;
+    display: flex;
+    flex-direction: column;
     margin: 8px 0px;
-    font-size: 16px;
+    label {
+      margin: 8px 0px;
+      font-size: 16px;
     }
     input {
       height: 33px;
@@ -26,42 +26,14 @@
       border-style: none;
       padding: 10px;
       font-size: 16px;
-=======
-  .my-form {
-    // background-color: lightgrey;
-    // border-radius: 5px;
-    // padding: 30px;
-    // width: 100%;
-    // max-width: 370px;
-
-    .form-group {
-      padding: 3px 0px;
-      display: flex;
-      flex-direction: column;
-      margin: 8px 0px;
-      label {
-        margin: 8px 0px;
-        font-size: 16px;
-
->>>>>>> f5220d4430164010803081e13cbe89c44d5ae77b
-      }
-      }
-    p {
-      text-align: center;
-      font-size: 16px;
-    } //form group
-<<<<<<< HEAD
-button {
-  font-size: 16px;
-  margin-top: 25px;
-  }
-=======
-
-    button {
-      margin-top: 25px;
-
     }
-
->>>>>>> f5220d4430164010803081e13cbe89c44d5ae77b
+  }//form group
+  p {
+    text-align: center;
+    font-size: 16px;
   }
-}
+  button {
+    font-size: 16px;
+    margin-top: 25px;
+  }
+}//my form
