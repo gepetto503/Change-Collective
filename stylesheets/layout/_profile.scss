@@ -1,5 +1,4 @@
 .profile-content {
-  // padding: 20px;
   margin-top: 80px;
   // border: 2px solid brown;
   background-color: lightgrey;
@@ -18,9 +17,13 @@
   max-width: 300px;
   // border: 1px solid red;
   background-image: url(http://lorempixel.com/300/300/);
-  @include small {
+  @include tablet {
     height: 250px;
     max-width: 250px;
+  }
+  @include small {
+    height: 250px;
+    min-width: 250px;
   }
 }
 
@@ -38,6 +41,7 @@
 .profile-causes {
   @include desktop;
   display: flex;
+  flex-wrap: wrap;
   padding: 5px 10px;
   flex-basis: 100%;
   width: 900px;
@@ -47,21 +51,31 @@
     border: 1px solid grey;
     border-radius: 5px;
     box-shadow: 0px 2px 12px 0 rgba(0, 0, 0, .25);
-    height:100px;
-    // width: 400px;
+    max-height:100px;
     display: flex;
-    flex-wrap: wrap;
     flex-basis: 33%;
-    padding-bottom: 100px;
-    margin: 50px 50px 5px 50px;
+    margin: 50px 50px 0 50px;
     background-color: #fff;
+    @include tablet {
+      max-height: 300px;
+    }
+    @include small {
+      max-height: 300px;
+    }
   }
   .feed-image {
     height: 100px;
     width: 100px;
-    margin: 5px;
+    margin: 10px 5px 0 5px;
+    align-self: center;
     background-image: url(http://lorempixel.com/90/90/cats);
     background-repeat: no-repeat;
+    @include tablet {
+      align-self: center;
+    }
+    @include small {
+      align-self: center;
+    }
   }
   @include tablet {
     display: flex;
