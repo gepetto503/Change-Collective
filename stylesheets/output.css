@@ -70,33 +70,22 @@ p {
   font-weight: normal;
   font-style: normal;
 }
-.about-flex-container {
-  padding: 1em;
+.center-text {
+  text-align: center;
+}
+
+.team {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
   flex-wrap: wrap;
+  justify-content: center;
 }
-.about-flex-container .image {
-  flex-basis: 100%;
+.team .team-member {
+  flex-basis: 30%;
+  padding: 20px;
 }
-@media (min-width: 768px) {
-  .about-flex-container .image {
-    flex-basis: 30%;
-  }
-}
-.about-flex-container .image img {
-  width: 100%;
-}
-.about-flex-container p {
-  padding: 1em;
-  flex-basis: 100%;
-}
-@media (min-width: 768px) {
-  .about-flex-container p {
-    margin-left: 40px;
-    flex-basis: 40%;
-  }
+.team .team-member img {
+  height: auto;
+  width: 300px;
 }
 
 .carousel-area {
@@ -141,18 +130,23 @@ p {
 .cause-box {
   height: 300px;
   flex-basis: 100%;
+  color: white;
   position: relative;
 }
 .cause-box .cause-info {
   position: absolute;
   top: 20px;
   left: 0;
+  padding: 20px;
   text-align: center;
   display: none;
 }
-.cause-box .cause-info p {
-  padding: 20px;
-  color: white;
+.cause-box .cause-info h2 {
+  margin: .5em auto;
+  font-size: 1.75em;
+}
+.cause-box .cause-info h4 {
+  margin: 1em auto;
 }
 
 .overlay {
@@ -310,21 +304,12 @@ footer a:nth-child(3) li {
 }
 .my-form .form-group label {
   margin: 8px 0px;
-  font-size: 16px;
-}
-.my-form .form-group input {
-  height: 33px;
-  border-radius: 5px;
-  border-style: none;
-  padding: 10px;
-  font-size: 16px;
 }
 .my-form p {
   text-align: center;
   font-size: 16px;
 }
 .my-form button {
-  font-size: 16px;
   margin-top: 25px;
 }
 
@@ -514,99 +499,6 @@ section {
   margin-top: 80px;
 }
 
-.flex-container {
-  font-size: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.cause {
-  height: 64vw;
-  width: 64vw;
-  margin: 20px;
-  flex-basis: auto;
-}
-@media (min-width: 768px) {
-  .cause {
-    height: 300px;
-    width: 300px;
-  }
-}
-@media (min-width: 1024px) {
-  .cause {
-    height: 400px;
-    width: 400px;
-  }
-}
-@media (min-width: 768px) {
-  .cause p {
-    font-size: 1em;
-  }
-}
-@media (min-width: 1024px) {
-  .cause p {
-    margin: 0;
-  }
-}
-
-.uno {
-  background-color: lightpink;
-}
-
-.dos {
-  background-color: lightblue;
-}
-
-.tres {
-  background-color: lightgreen;
-}
-
-/* entire container, keeps perspective */
-.flip-container {
-  perspective: 1000px;
-}
-
-/* flip the pane when hovered */
-.flip-container:hover .flipper, .flip-container.hover .flipper {
-  transform: rotateY(180deg);
-}
-
-.flip-container, .front, .back {
-  width: 100%;
-}
-
-/* flip speed goes here */
-.flipper {
-  transition: 0.6s;
-  transform-style: preserve-3d;
-  position: relative;
-}
-
-/* hide back of pane during swap */
-.front, .back {
-  backface-visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-/* front pane, placed above back */
-.front {
-  z-index: 2;
-  /* for firefox 31 */
-  transform: rotateY(0deg);
-}
-.front img {
-  width: 100%;
-}
-
-/* back, initially hidden pane */
-.back {
-  transform: rotateY(180deg);
-  padding: 20px;
-}
-
 .profile-content {
   border: 2px solid brown;
   display: flex;
@@ -669,7 +561,7 @@ section {
   }
 }
 
-textarea {
+#bio {
   width: 100%;
   height: 50px;
   resize: none;
@@ -872,6 +764,24 @@ body {
   padding: 30px;
   width: 100%;
   max-width: 370px;
+}
+
+button, input, label, textarea {
+  font-size: 16px;
+}
+
+input {
+  height: 33px;
+}
+
+input, textarea {
+  border-radius: 5px;
+  border-style: none;
+  padding: 10px;
+}
+
+#comment {
+  max-width: 100%;
 }
 
 /*# sourceMappingURL=output.css.map */
