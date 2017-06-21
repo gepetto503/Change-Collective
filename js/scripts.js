@@ -1,3 +1,7 @@
+//if possible, write some js that says if document=index.html, .addClass('fixed')
+
+//also, if !document=index.html, add padding-top to main content area.
+
 $(function(){
 
   // Sticky Header: makes a fixed navbar appear after you scroll down 100 units
