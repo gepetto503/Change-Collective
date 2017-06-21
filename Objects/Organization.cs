@@ -9,7 +9,7 @@ namespace GroupProject
   {
     private int _id;
     private string _name, _website, _email, _bio;
-    
+
     public Organization(string Name, string Website, string Email, string Bio, int Id = 0)
     {
       _id = Id;
@@ -38,6 +38,10 @@ namespace GroupProject
     public string GetBio()
     {
       return _bio;
+    }
+    public void SetName(string name)
+    {
+      _name = name;
     }
 
     public override bool Equals(System.Object otherOrganization)

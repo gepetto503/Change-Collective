@@ -49,16 +49,27 @@
       </div>
       <section>
         <div class="flex-grid-container">
-          <div class="cause-box one">
-            <button class="grid-button" type="submit" name="button">Donate</button>
-            <div class="overlay">
+          @if(@Model.Count != 0)
+          {
+            @foreach(var organization in Model)
+            {
+              <div class="cause-box one">
+                <form class="" action="/organization/organization.GetId()" method="get">
+                  <button class="grid-button" type="submit" name="button">Donate</button>
+                </form>
+              <div class="overlay">
               <div class="cause-info">
                 <p>
-                  This is a featured cause.  Blah blah blah Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  @organization.GetName()
+                </p>
+                <p>
+                  @organization.GetBio()
                 </p>
               </div>
-            </div>
-          </div>
+              </div>
+              </div>
+            }
+          }
           <div class="cause-box two">
             <button class="grid-button" type="submit" name="button">Donate</button>
             <div class="overlay">
@@ -172,22 +183,26 @@
       <section class="sign-up">
         <h2><span class="highlight-text"></span></h2>
         <div class="form-flex-container">
-          <form class="my-form">
+          <form class="my-form" action="/user/new" method="post">
             <h3>Sign Up</h3>
             <div class="form-group">
-              <label>Username</label>
-              <input type="text" name="name" placeholder="Create a username">
+              <label>Name</label>
+              <input type="text" name="name" placeholder="Enter your name">
             </div>
             <div class="form-group">
               <label>Email</label>
-              <input type="text" name="name" placeholder="Enter your email">
+              <input type="text" name="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+              <label>Username</label>
+              <input type="text" name="username" placeholder="Create a username">
             </div>
             <div class="form-group">
               <label>Password</label>
-              <input type="text" name="name" placeholder="Create a password">
+              <input type="text" name="password" placeholder="Create a password">
             </div>
             <button class="form-button" type="submit" name="button">Sign Up</button>
-            <p>Been here before? <a href="#">Sign in here</a></p>
+            <p>Been here before? <a href="/sign_in">Sign in here</a></p>
           </form>
         </div>
       </section>
