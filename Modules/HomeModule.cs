@@ -19,7 +19,7 @@ namespace GroupProject
         return View["sign_in.cshtml"];
       };
 
-      Post["/sign_in/"] = _ =>
+      Post["/sign_in"] = _ =>
       {
         string username = Request.Form["username"];
         string password = Request.Form["password"];
