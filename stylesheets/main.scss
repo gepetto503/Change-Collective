@@ -26,22 +26,31 @@
 
 // Layout-related sections
 @import
-  'layout/header',
-  'layout/layout',
-  'layout/cause-grid',
   'layout/about',
-  'layout/form',
-  'layout/footer',
-  'layout/hero',
+  'layout/cause-screen',
   'layout/causes',
+  'layout/footer',
+  'layout/form',
+  'layout/header',
+  'layout/hero',
+  'layout/layout',
   'layout/mission',
+<<<<<<< HEAD
   'layout/sign-in',
   'layout/profile';
+=======
+  'layout/old-cause-grid',
+  'layout/sign-in';
+>>>>>>> f5220d4430164010803081e13cbe89c44d5ae77b
+
 
 
 //components might go here
 @import
-  'components/button';
+  'components/button',
+  'components/carousel',
+  'components/slider',
+  'components/form-styles';
 
 //page-specific partials might go here
 
