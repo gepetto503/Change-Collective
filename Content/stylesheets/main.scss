@@ -35,8 +35,11 @@
   'layout/hero',
   'layout/layout',
   'layout/mission',
+  'layout/sign-in',
   'layout/old-cause-grid',
-  'layout/sign-in';
+  'layout/profile',
+  'layout/feed';
+
 
 
 
@@ -44,7 +47,8 @@
 @import
   'components/button',
   'components/carousel',
-  'components/slider';
+  'components/slider',
+  'components/form-styles';
 
 //page-specific partials might go here
 

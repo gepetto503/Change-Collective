@@ -7,17 +7,23 @@
 .cause-box {
   height: 300px;
   flex-basis: 100%;
+  color: white;
   position: relative;
   .cause-info {
     position: absolute;
     top: 20px;
     left: 0;
+    padding: 20px;
     text-align: center;
     display: none;
-    p {
-      padding: 20px;
-      color: white;
+    h2 {
+      margin: .5em auto;
+      font-size: 1.75em;
     }
+    h4 {
+      margin: 1em auto;
+    }
+
   }
 }
 
@@ -38,7 +44,7 @@
   top: 0;
   left: 0;
   z-index: 50;
-  display: flex;
+  display: flex; //this is the line that makes the text appear when hovered!
   justify-content: center;
   align-items: flex-end;
 }
@@ -57,12 +63,9 @@
   transform: translate(50%, 50%);
 }
 
-
-
 .one {
   background: url(http://fillmurray.com/1000/500) center center no-repeat;
   background-size: cover;
-
   @include desktop {
     flex-basis: 50%;
   };

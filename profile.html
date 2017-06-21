@@ -9,11 +9,14 @@
     <title></title>
   </head>
   <body>
-    <header class="main_h">
+    <header class="navbar fixed">
 
         <div class="row">
-            <a class="logo" href="#">Home</a>
+          <div class="nav-left">
 
+            <a class="logo" href="index.html">Home /</a>
+            <a class="back-nav" href="#">Back</a>
+          </div>
             <div class="mobile-toggle">
                 <span></span>
                 <span></span>
@@ -31,10 +34,48 @@
 
     </header>
 
-    <div class="main full">
+    <div class="main"> <!-- .full in layout.scss, messed up nav bar -->
+      <div class="profile-content">
+        <div class="profile-image">
 
+        </div>
+        <div class="profile-bio">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+          <textarea id="bio" placeholder="Tell us about yourself"></textarea>
+          <button class="form-button" type="submit" name="button">Update</button>
+        </div>
+        <div class="profile-causes">
+          <div class="profile-feed">
+            <div class="feed-image">
+
+            </div>
+            <ul>
+              <li>Non-profit name</li><br>
+              <li>How much money you donated</li>
+            </ul>
+          </div>
+          <div class="profile-feed">
+            <div class="feed-image">
+
+            </div>
+            <ul>
+              <li>Non-profit name</li><br>
+              <li>How much money you donated</li>
+            </ul>
+          </div>
+          <div class="profile-feed">
+            <div class="feed-image">
+
+            </div>
+            <ul>
+              <li>Non-profit name</li><br>
+              <li>How much money you donated</li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <!--content-->
-
     </div>
 
     <footer>

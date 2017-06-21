@@ -182,6 +182,47 @@ namespace GroupProject
       return foundUser;
     }
 
+    public static User UserLookup(string username)
+    {
+      SqlConnection conn = DB.Connection();
+      conn.Open();
+
+      SqlCommand cmd = new SqlCommand("SELECT * FROM users WHERE user_name = @Username", conn);
+      cmd.Parameters.Add(new SqlParameter("@Username", username));
+
+      SqlDataReader rdr = cmd.ExecuteReader();
+
+      int foundUserId = 0;
+      string foundUserName = null;
+      string foundPassword = null;
+      string foundName = null;
+      string foundEmail = null;
+      string foundBio = null;
+
+      while(rdr.Read())
+      {
+        foundUserId = rdr.GetInt32(0);
+        foundUserName = rdr.GetString(1);
+        foundPassword = rdr.GetString(2);
+        foundName = rdr.GetString(3);
+        foundEmail = rdr.GetString(4);
+        foundBio = rdr.GetString(5);
+      }
+      User foundUser = new  User(foundUserName, foundPassword, foundName, foundEmail, foundBio, foundUserId);
+
+      if(rdr != null)
+      {
+        rdr.Close();
+      }
+      if(conn != null)
+      {
+        conn.Close();
+      }
+
+      return foundUser;
+    }
+
+
     public void Update(string userInfo)
     {
       SqlConnection conn = DB.Connection();
