@@ -94,11 +94,11 @@ p {
   justify-content: center;
 }
 .carousel-area .carousel .carousel__items {
-  height: 285px;
+  height: 335px;
 }
 @media (min-width: 768px) {
   .carousel-area .carousel .carousel__items {
-    height: 600px;
+    height: 375px;
   }
 }
 
@@ -196,7 +196,7 @@ p {
 }
 
 .cause-box:first-child {
-  background: url(http://fillmurray.com/1000/500) center center no-repeat;
+  background: url(../images/causes/morpheus-bg.png) center center no-repeat;
   background-size: cover;
 }
 @media (min-width: 1024px) {
@@ -206,7 +206,7 @@ p {
 }
 
 .cause-box:nth-child(2) {
-  background: url(http://fillmurray.com/400/500) center center no-repeat;
+  background: url(../images/causes/psaa-bg.jpg) center center no-repeat;
   background-size: cover;
 }
 @media (min-width: 768px) {
@@ -221,7 +221,7 @@ p {
 }
 
 .cause-box:nth-child(3) {
-  background: url(http://fillmurray.com/700/500) center center no-repeat;
+  background: url(../images/causes/pixie.jpg) center center no-repeat;
   background-size: cover;
 }
 @media (min-width: 768px) {
@@ -236,7 +236,7 @@ p {
 }
 
 .cause-box:nth-child(4) {
-  background: url(http://fillmurray.com/601/500) center center no-repeat;
+  background: url(../images/causes/trees.jpg) center center no-repeat;
   background-size: cover;
 }
 @media (min-width: 768px) {
@@ -251,7 +251,7 @@ p {
 }
 
 .cause-box:nth-child(5) {
-  background: url(http://fillmurray.com/500/500) center center no-repeat;
+  background: url(../images/causes/homeless.jpg) center center no-repeat;
   background-size: cover;
 }
 @media (min-width: 768px) {
@@ -266,7 +266,7 @@ p {
 }
 
 .cause-box:nth-child(6) {
-  background: url(http://fillmurray.com/1000/800) center center no-repeat;
+  background: url(../images/causes/unite.jpg) center center no-repeat;
   background-size: cover;
 }
 @media (min-width: 1024px) {
@@ -452,7 +452,7 @@ nav ul a {
 }
 
 .hero {
-  background: #333 url(../images/young-people.jpg) no-repeat center center fixed;
+  background: #333 url(../images/hero-backgrounds/young-people.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;

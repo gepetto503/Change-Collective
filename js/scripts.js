@@ -15,7 +15,7 @@ $(function(){
   if ($('.navbar').hasClass('fixed')) { //applies sticky right off the bat if navbar has a class called fixed in the initial html (so put class of fixed on navbar on html pages that you want the navbar to always be visible)
     $('.navbar').addClass('sticky');
   }
-
+// show and hide carousel
   $('.input-bio1').click(function(){
     $('.donate-text').hide();
     $('.bio-1').show();
@@ -45,6 +45,51 @@ $(function(){
     $('.donate-text').hide();
     $('.bio-6').show();
   });
+
+  // display range of slider
+
+  function modifyOffset() {
+  	var el, newPoint, newPlace, offset, siblings, k;
+  	width    = this.offsetWidth;
+  	newPoint = (this.value - this.getAttribute("min")) / (this.getAttribute("max") - this.getAttribute("min"));
+  	offset   = -1;
+  	if (newPoint < 0) { newPlace = 0;  }
+  	else if (newPoint > 1) { newPlace = width; }
+  	else { newPlace = width * newPoint + offset; offset -= newPoint;}
+  	siblings = this.parentNode.childNodes;
+  	for (var i = 0; i < siblings.length; i++) {
+  		sibling = siblings[i];
+  		if (sibling.id == this.id) { k = true; }
+  		if ((k == true) && (sibling.nodeName == "OUTPUT")) {
+  			outputTag = sibling;
+  		}
+  	}
+  	outputTag.style.left       = newPlace + "px";
+  	outputTag.style.marginLeft = offset + "%";
+  	outputTag.innerHTML        = this.value;
+  }
+
+  function modifyInputs() {
+
+  	var inputs = document.getElementsByTagName("input");
+  	for (var i = 0; i < inputs.length; i++) {
+  		if (inputs[i].getAttribute("type") == "range") {
+  			inputs[i].onchange = modifyOffset;
+
+  			// the following taken from http://stackoverflow.com/questions/2856513/trigger-onchange-event-manually
+  			if ("fireEvent" in inputs[i]) {
+  			    inputs[i].fireEvent("onchange");
+  			} else {
+  			    var evt = document.createEvent("HTMLEvents");
+  			    evt.initEvent("change", false, true);
+  			    inputs[i].dispatchEvent(evt);
+  			}
+  		}
+  	}
+  }
+
+  modifyInputs();
+
 
   //scroll function causes navbar to appear and dissapear on pages that don't have the fixed class on navbar
   $(window).scroll(function() {
