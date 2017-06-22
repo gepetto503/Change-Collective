@@ -1,0 +1,26 @@
+.my-form {
+  background-color: lightgrey;
+  border-radius: 5px;
+  padding: 30px;
+  width: 100%;
+  max-width: 370px;
+}
+
+button, input, label, textarea {
+  font-size: 16px;
+}
+
+input {
+  height: 33px;
+}
+
+input, textarea {
+  border-radius: 5px;
+  border-style: none;
+  padding: 10px;
+}
+
+
+#comment {
+  max-width: 100%;
+}

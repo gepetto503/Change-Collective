@@ -1,0 +1,54 @@
+@charset 'UTF-8';
+
+// Libraries
+@import
+  'libraries/bourbon/bourbon',
+  'libraries/neat/neat';
+
+// global vars functions and mixins.
+@import
+  'global/variables',
+  'global/functions',
+  'global/mixins';
+
+//Vendors stuff might go here
+
+
+// Base stuff
+@import
+  'base/base',
+  'base/typography';
+
+@import
+  'fonts/junction';
+
+
+
+// Layout-related sections
+@import
+  'layout/about',
+  'layout/cause-screen',
+  'layout/causes',
+  'layout/footer',
+  'layout/form',
+  'layout/header',
+  'layout/hero',
+  'layout/layout',
+  'layout/mission',
+  'layout/sign-in',
+  'layout/profile',
+  'layout/feed';
+
+
+
+
+//components might go here
+@import
+  'components/button',
+  'components/carousel',
+  'components/slider',
+  'components/form-styles';
+
+//page-specific partials might go here
+
+//themes might go here
