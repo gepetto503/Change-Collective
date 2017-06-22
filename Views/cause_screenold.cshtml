@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/Content/stylesheets/output.css">
+    <script src="/Content/js/jquery-3.2.1.js"></script>
+    <script src="/Content/js/scripts.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <!--put header here-->
+    <div class="main">
+      <a href="#bill-6"><h1 style="color:black">@Model["selectedOrganization"].GetName()</h1></a>
+      <div class="carousel-area">
+        <div class="carousel flex-child">
+          <input type="radio" id="carousel-1" name="carousel[]" checked>
+          <input type="radio" id="carousel-2" name="carousel[]">
+          <input type="radio" id="carousel-3" name="carousel[]">
+          <input type="radio" id="carousel-4" name="carousel[]">
+          <input type="radio" id="carousel-5" name="carousel[]">
+          <input type="radio" id="carousel-6" name="carousel[]">
+          <ul class="carousel__items">
+            <li class="carousel__item"><img src="http://fillmurray.com/500/500" alt=""></li>
+            <li class="carousel__item"><img src="http://fillmurray.com/500/501" alt=""></li>
+            <li class="carousel__item"><img src="http://fillmurray.com/500/502" alt=""></li>
+            <li class="carousel__item"><img src="http://fillmurray.com/500/503" alt=""></li>
+            <li class="carousel__item"><img src="http://fillmurray.com/500/504" alt=""></li>
+            <li class="carousel__item"><img id="bill-6"src="http://fillmurray.com/500/505" alt=""></li>
+          </ul>
+          <div class="carousel__prev">
+            <label for="carousel-1"></label>
+            <label for="carousel-2"></label>
+            <label for="carousel-3"></label>
+            <label for="carousel-4"></label>
+            <label for="carousel-5"></label>
+            <label for="carousel-6"></label>
+          </div>
+          <div class="carousel__next">
+            <label for="carousel-1"></label>
+            <label for="carousel-2"></label>
+            <label for="carousel-3"></label>
+            <label for="carousel-4"></label>
+            <label for="carousel-5"></label>
+            <label for="carousel-6"></label>
+          </div>
+          <div class="carousel__nav">
+            <label for="carousel-1"></label>
+            <label for="carousel-2"></label>
+            <label for="carousel-3"></label>
+            <label for="carousel-4"></label>
+            <label for="carousel-5"></label>
+            <label for="carousel-6"></label>
+          </div>
+        </div>
+      </div><!--carousel area-->
+
+      <div class="donate-to-causes"><!--this is the flex parent of donate text and donate form-->
+        <div class="donate-text flex-child">
+          <h1>@Model["selectedOrganization"].GetName()</h1>
+          <p>@Model["selectedOrganization"].GetLargeBio()</p>
+        </div>
+
+        <div class="donate-form-area flex-child">
+          <form class="my-form" action="/organization/info" method="post">
+            <input class="slider" type="range">
+            <button class="form-button" type="submit" name="button">Donate</button>
+          </form>
+        </div>
+      </div><!--donate to causes-->
+    </div><!--main-->
+    <!--put footer here-->
+  </body>
+</html>

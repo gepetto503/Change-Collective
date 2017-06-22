@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="stylesheets/output.css">
-    <script src="js/jquery-3.2.1.js"></script>
-    <script src="js/scripts.js"></script>
+    <link rel="stylesheet" href="/Content/stylesheets/output.css">
+    <script src="/Content/js/jquery-3.2.1.js"></script>
+    <script src="/Content/js/scripts.js"></script>
     <title></title>
   </head>
   <body>
@@ -20,12 +20,21 @@
           <input type="radio" id="carousel-5" name="carousel[]">
           <input type="radio" id="carousel-6" name="carousel[]">
           <ul class="carousel__items">
+<<<<<<< HEAD:Views/cause_screen.cshtml
+            <li class="carousel__item"><img src="/Content/images/causes/morpheus-bg.png" alt=""></li>
+            <li class="carousel__item"><img src="http://fillmurray.com/500/501" alt=""></li>
+            <li class="carousel__item"><img src="http://fillmurray.com/500/502" alt=""></li>
+            <li class="carousel__item"><img src="http://fillmurray.com/500/503" alt=""></li>
+            <li class="carousel__item"><img src="http://fillmurray.com/500/504" alt=""></li>
+            <li class="carousel__item"><img src="http://fillmurray.com/500/505" alt=""></li>
+=======
             <li class="carousel__item"><img src="images/causes/morpheus-bg.png" alt="turntable"></li>
             <li class="carousel__item"><img src="images/causes/psaa-bg.jpg" alt="mural"></li>
             <li class="carousel__item"><img src="images/causes/homeless.jpg" alt="volunteer at portland homeless family solutions hanging out with kid"></li>
             <li class="carousel__item"><img src="images/causes/pixie.jpg" alt="cute dog"></li>
             <li class="carousel__item"><img src="images/causes/trees.jpg" alt="kids working with trees"></li>
             <li class="carousel__item"><img src="images/causes/unite-img.jpg" alt="diverse group of people"></li>
+>>>>>>> master:cause-screen.html
           </ul>
           <div class="carousel__prev">
             <label class="input-bio1"for="carousel-1"></label>
@@ -55,6 +64,23 @@
       </div><!--carousel area-->
 
       <div class="donate-to-causes"><!--this is the flex parent of donate text and donate form-->
+<<<<<<< HEAD:Views/cause_screen.cshtml
+        @if(@Model["allOrganizations"].Count != 0)
+        {
+          @foreach(var organization in Model["allOrganizations"])
+          {
+
+            <div class="bio-@organization.GetId() donate-text flex-child">
+            <a href="@organization.GetWebsite()"><h1>@organization.GetName()</h1></a>
+            <p>@organization.GetLargeBio()</p>
+            <a href="@organization.GetEmail()"><p>Contact</p></a>
+            </div>
+          }
+        }
+        @* <div class="bio-2 donate-text flex-child">
+          <h1>ANOTHER NON_PROFIT ORG</h1>
+          <p>THIS IS 2.Transformation through arts and awareness. The purpose of the Morpheus Youth Project is to create an accessible, safe and respectful environment that encourages positive growth and provides creative opportunities through the arts and humanities.</p>
+=======
         <div class="bio-1 donate-text flex-child">
           <a href="http://www.morpheusyouth.org"><h1>Morpheus Youth Project</h1></a>
           <p>Transformation through arts and awareness.
@@ -64,6 +90,7 @@
         <div class="bio-2 donate-text flex-child">
           <a href="http://www.pdxstreetart.org/"><h1>Portland Street Art Alliance</h1></a>
           <p>Portland is known for its quirky DIY mentality, progressive urban planning, bicycle-friendliness, and livable neighborhoods. Some of Portland's best street art can be found in its major cultural centers like Alberta, Belmont, Hawthorne, Central Eastside, and Mississippi. In Portland's neighborhoods you can find art by internationally renowned artists, local legends, and anonymous citizens. Below are some resources to find street art in Portland, network in our community, and learn about its history. But this just scratches the surface of the resources and art out there to discover, so put on your walking shoes, hop on your bike, and explore the streets and hidden spaces of Portland! Street art is always changing, so you never know what's around the next corner!</p>
+>>>>>>> master:cause-screen.html
         </div>
         <div class="bio-3 donate-text flex-child">
           <a href="http://www.pdxhfs.org/"><h1>Portland Homeless Family Solutions</h1></a>
@@ -78,6 +105,15 @@
           <a href="http://friendsoftrees.org"><h1>Friends of Trees</h1></a>
           <p>Friends of Trees was founded in 1989 by a local community member who loved trees and started planting them in Portland neighborhoods. Today, Friends of Trees is a nationally recognized, regional leader in improving the urban tree canopy and restoring sensitive natural areas—through programs delivered by thousands of volunteers. Friends of Trees greens our region while building community.</p>
         </div>
+<<<<<<< HEAD:Views/cause_screen.cshtml
+        <div class="bio-6 donate-text flex-child">
+          <h1>NON PROFIT 6</h1>
+          <p>THIS IS 6. Transformation through arts and awareness. The purpose of the Morpheus Youth Project is to create an accessible, safe and respectful environment that encourages positive growth and provides creative opportunities through the arts and humanities.</p>
+        </div> *@
+        <div class="donate-form-area flex-child">
+          <form class="my-form" action="/organization/info" method="post">
+            <input class="slider" type="range">
+=======
         <div  class="bio-6 donate-text flex-child">
           <a href="http://www.uniteoregon.org"><h1>Unite Oregon</h1></a>
           <p>Led by people of color, immigrants and refugees, rural communities, and people experiencing poverty, we work across Oregon to build a unified intercultural movement for justice.</p>
@@ -87,11 +123,17 @@
           <form class="my-form" action="index.html" method="post">
             <output for="foo" onforminput="value = foo.valueAsNumber;"></output>
             <input name="foo" type="range" min="0" max="1000" onchange="updateTextInput" step="10">
+>>>>>>> master:cause-screen.html
             <button class="form-button" type="submit" name="button">Donate</button>
           </form>
         </div>
       </div><!--donate to causes-->
-    </div><!--main-->
+    </div>
+    <footer>
+      <a href="https://github.com/gepetto503/venmo-for-non-profits"><li>Github</li></a>
+      <a href="/about"><li>Meet Our Team</li></a>
+      <a href="/contact"><li>Contact</li></a>
+    </footer><!--main-->
     <!--put footer here-->
   </body>
 </html>

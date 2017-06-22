@@ -1,0 +1,53 @@
+//this is a layout file.  carousel, form, etc. may be styled further in components file, but layout stuff (specifically flex box properties) live here.
+
+
+.carousel-area {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  .carousel {
+    .carousel__items {
+      height: 285px;
+      @include tablet {
+        height: 600px;
+      };
+    }
+  }
+}
+
+.donate-to-causes {//direct flex parent of donate-text and donate-form-area
+  display: flex;
+  flex-direction: column;
+  align-items: center;//centers items horizontally
+  // border: 1px solid blue;
+
+  .donate-text {
+    max-width: 600px;
+  }
+
+  .donate-form-area {
+    form {
+      // border: 1px dashed blue;
+      height: 500px;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      input {
+        width: 100%;
+        height: 200px;
+      }
+      button {
+        // width: 300px;
+      }
+    }
+  }
+}
+
+.donate-text {
+  display: none;
+}
+
+.bio-1 {
+  display: block;
+}

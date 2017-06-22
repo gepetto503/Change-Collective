@@ -52,6 +52,55 @@ namespace GroupProject
       Assert.Equal(testUser, foundUser);
     }
 
+    [Fact]
+    public void Test_UpdateUserNameInDb()
+    {
+      //Arrange
+      User testUserName = new User("ShakyTown", "Marley88", "Jordan", "jdmysliwiec@gmail.com", "I like to Help");
+      testUserName.Save();
+      string updateUserName = "SriKalki";
+
+      //Act
+      testUserName.Update(updateUserName);
+      string resultName = testUserName.GetName();
+
+      //Assert
+      Assert.Equal(updateUserName, resultName);
+    }
+
+    [Fact]
+    public void Test_UpdateUserEmailInDb()
+    {
+      //Arrange
+      User testUserEmail = new User("ShakyTown", "Marley88", "Jordan", "jdmysliwiec@gmail.com", "I like to Help");
+      testUserEmail.Save();
+      string updateUserEmail = "beforethedeluge@hotmail.com";
+
+      //Act
+      testUserEmail.Update(updateUserEmail);
+      string resultEmail = testUserEmail.GetEmail();
+
+      //Assert
+      Assert.Equal(updateUserEmail, resultEmail);
+    }
+
+    [Fact]
+    public void Test_UpdateUserBioInDb()
+    {
+      //Arrange
+      User testUserBio = new User("ShakyTown", "Marley88", "Jordan", "jdmysliwiec@gmail.com", "I like to Help");
+      testUserBio.Save();
+      string updateUserBio = "Helping is fun";
+
+      //Act
+      testUserBio.Update(updateUserBio);
+      string resultBio = testUserBio.GetBio();
+
+      //Assert
+      Assert.Equal(updateUserBio, resultBio);
+    }
+
+
     public void Dispose()
     {
       User.DeleteAll();

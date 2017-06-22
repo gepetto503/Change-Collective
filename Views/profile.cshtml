@@ -3,35 +3,37 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="Content/stylesheets/output.css">
+    <link rel="stylesheet" href="/Content/stylesheets/output.css">
     <script src="/Content/js/jquery-3.2.1.js"></script>
     <script src="/Content/js/scripts.js"></script>
     <title></title>
   </head>
   <body>
-    <header class="navbar">
-      <div class="row">
-        <div class="nav-left">
+    <header class="navbar fixed">
 
-          <a class="logo" href="index.html">Home</a>
-        </div>
-          <div class="mobile-toggle">
-              <span></span>
-              <span></span>
-              <span></span>
+        <div class="row">
+          <div class="nav-left">
+
+            <a class="logo" href="index.html">Home /</a>
+            <a class="back-nav" href="/">Back</a>
           </div>
+            <div class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
 
-          <nav>
-              <ul>
-                  <li><a href="cause-screen.html">Causes</a></li>
-                  <li><a href="feed.html">Feed</a></li>
-                  <li><a href="profile.html">Profile</a></li>
-                  <li><a href="#">Sign Out</a></li>
-              </ul>
-          </nav>
+            <nav>
+                <ul>
+                    <li><a href="/">Causes</a></li>
+                    <li><a href="/sign_in">Sign Up</a></li>
+                </ul>
+            </nav>
 
-      </div> <!-- / row -->
+        </div> <!-- / row -->
+
     </header>
+
     <div class="main"> <!-- .full in layout.scss, messed up nav bar -->
       <div class="profile-content">
         <div class="profile-image">
@@ -76,6 +78,10 @@
       <!--content-->
     </div>
 
-    <!--put footer here-->
+    <footer>
+      <a href="https://github.com/gepetto503/venmo-for-non-profits"><li>Github</li></a>
+      <a href="/about"><li>Meet Our Team</li></a>
+      <a href="/contact"><li>Contact</li></a>
+    </footer>
   </body>
 </html>

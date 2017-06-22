@@ -1,0 +1,133 @@
+.causes {
+  h2 {
+    text-align: center;
+    font-size: 2em;
+  }
+}
+.flex-grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.cause-box {
+  height: 300px;
+  flex-basis: 100%;
+  color: white;
+  position: relative;
+  .cause-info {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    padding: 20px;
+    text-align: center;
+    display: none;
+    h2 {
+      margin: .5em auto;
+      font-size: 1.75em;
+    }
+    h4 {
+      margin: 1em auto;
+    }
+
+  }
+}
+
+.overlay {
+  display: none;
+}
+//
+// .overlay button {
+//   margin-bottom: 25px;
+//   // background-color: $color;
+// }
+
+.cause-box:hover .overlay {
+  @include size(100% 100%);
+  background-color: black;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  display: flex; //this is the line that makes the text appear when hovered!
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.grid-button {
+  display: none;
+  margin-bottom: 25px;
+}
+
+.cause-box:hover .grid-button {
+  display: block;
+  z-index: 100;
+  position: absolute;
+  bottom: 10%;
+  right: 50%;
+  transform: translate(50%, 50%);
+}
+
+.cause-box:nth-of-type(1) {
+  background: url(http://fillmurray.com/1000/500) center center no-repeat;
+  background-size: cover;
+  @include desktop {
+    flex-basis: 50%;
+  };
+}
+
+.cause-box:nth-of-type(2) {
+  background: url(http://fillmurray.com/400/500) center center no-repeat;
+  background-size: cover;
+  @include tablet {
+    flex-basis: 50%;
+  };
+  @include desktop {
+    flex-basis: 25%;
+  };
+}
+
+.cause-box:nth-child(3) {
+  background: url(http://fillmurray.com/700/500) center center no-repeat;
+  background-size: cover;
+  @include tablet {
+    flex-basis: 50%;
+  };
+  @include desktop {
+    flex-basis: 25%;
+  };
+}
+
+.cause-box:nth-child(4) {
+  background: url(http://fillmurray.com/601/500) center center no-repeat;
+  background-size: cover;
+  @include tablet {
+    flex-basis: 50%;
+  };
+  @include desktop {
+    flex-basis: 25%;
+  };
+}
+
+.cause-box:nth-child(5) {
+  background: url(http://fillmurray.com/500/500) center center no-repeat;
+  background-size: cover;
+
+  @include tablet {
+    flex-basis: 50%;
+  };
+  @include desktop {
+    flex-basis: 25%;
+  };
+}
+
+.cause-box:nth-child(6) {
+  background: url(http://fillmurray.com/1000/800) center center no-repeat;
+  background-size: cover;
+  @include tablet {
+  };
+  @include desktop {
+    flex-basis: 50%;
+  };
+}

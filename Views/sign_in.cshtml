@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/Content/stylesheets/output.css">
+    <script src="/Content/js/jquery-3.2.1.js"></script>
+    <script src="/Content/js/scripts.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <header class="navbar sticky">
+        <div class="row">
+            <a class="logo" href="/">Home</a>
+
+            <div class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href=".cause-grid">Causes</a></li>
+                    <li><a href=".sign-up">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div> <!-- / row -->
+
+    </header>
+
+    <div class="main full">
+      <section class="sign-in">
+        <h2><span class="highlight-text">Sign In</span></h2>
+        <div class="form-flex-container">
+          <form action="/sign_in"class="my-form" method="post">
+            <h3>Sign In</h3>
+            <div class="form-group">
+              <label>Username</label>
+              <input type="text" name="username" placeholder="Enter your username">
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="text" name="password" placeholder="Enter your password">
+            </div>
+            <button class="form-button" type="submit" name="button">Sign In</button>
+            <p>Don't have an account? <a href="/">Sign up here</a></p>
+          </form>
+        </div>
+      </section>
+      <!--content-->
+
+    </div>
+
+    <footer>
+      <a href="https://github.com/gepetto503/venmo-for-non-profits"><li>Github</li></a>
+      <a href="/about"><li>Meet Our Team</li></a>
+      <a href="/contact"><li>Contact</li></a>
+    </footer>
+  </body>
+</html>
