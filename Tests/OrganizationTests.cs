@@ -27,8 +27,8 @@ namespace GroupProject
     public void Test_Override_ObjectsAreEqual()
     {
       //Arrange, Act
-      Organization organization1 = new Organization("SaveTheSquirrels", "www.savethesquirrels.org", "savethesquirrels@gmail.com", "Saving the Planet from evil dolphins");
-      Organization organization2 = new Organization("SaveTheSquirrels", "www.savethesquirrels.org", "savethesquirrels@gmail.com", "Saving the Planet from evil dolphins");
+      Organization organization1 = new Organization("SaveTheSquirrels", "www.savethesquirrels.org", "savethesquirrels@gmail.com", "Saving the Planet from evil dolphins", "Large Bio info");
+      Organization organization2 = new Organization("SaveTheSquirrels", "www.savethesquirrels.org", "savethesquirrels@gmail.com", "Saving the Planet from evil dolphins", "Large Bio info");
       //Assert
       Assert.Equal(organization1, organization2);
     }
@@ -37,7 +37,7 @@ namespace GroupProject
     public void Test_Save_SaveOrganizationToDB()
     {
       //Arrange
-      Organization testOrganization = new Organization("SaveTheDolphins", "www.savethedophins.org", "savethedolpins@gmail.com", "Saving the Planet from squirrel people.");
+      Organization testOrganization = new Organization("SaveTheDolphins", "www.savethedophins.org", "savethedolpins@gmail.com", "Saving the Planet from squirrel people.", "Large Bio info");
       testOrganization.Save();
       //Act
       List<Organization> result = Organization.GetAll();
@@ -50,7 +50,7 @@ namespace GroupProject
     public void Test_Find_FindOrganizationInDb()
     {
       //Arrange
-      Organization testOrganization = new Organization("SaveTheDolphins","www.savethedophins.org", "savethedolpins@gmail.com", "Saving the Planet from squirrel people.");
+      Organization testOrganization = new Organization("SaveTheDolphins","www.savethedophins.org", "savethedolpins@gmail.com", "Saving the Planet from squirrel people.", "Large Bio info");
       testOrganization.Save();
       //Act
       Organization foundOrganization = Organization.Find(testOrganization.GetId());
@@ -62,7 +62,7 @@ namespace GroupProject
     public void Test_UpdateOrganizationNameInDB()
     {
       //Arrange
-      Organization testOrganizationName = new Organization("SaveTheMoistOwlet", "wwww.savethemoistowlet.com", "savethemoistowlet@gmail.com", "Save the Planet from evil humans who want to spray owlets with water.");
+      Organization testOrganizationName = new Organization("SaveTheMoistOwlet", "wwww.savethemoistowlet.com", "savethemoistowlet@gmail.com", "Save the Planet from evil humans who want to spray owlets with water.", "Large Bio info");
       testOrganizationName.Save();
       string updateOrganizationName = "SaveTheBirds";
       //Act
@@ -76,7 +76,7 @@ namespace GroupProject
     public void Test_UpdateOrganizationEmailInDB()
     {
       //Arrange
-      Organization testOrganizationEmail = new Organization("SaveTheMoistOwlet", "wwww.savethemoistowlet.com", "savethemoistowlet@gmail.com", "Save the Planet from evil humans who want to spray owlets with water.");
+      Organization testOrganizationEmail = new Organization("SaveTheMoistOwlet", "wwww.savethemoistowlet.com", "savethemoistowlet@gmail.com", "Save the Planet from evil humans who want to spray owlets with water.", "Large Bio info");
       testOrganizationEmail.Save();
       string updateOrganizationEmail = "savethebirds@gmail.com";
       //Act
@@ -90,7 +90,7 @@ namespace GroupProject
     public void Test_UpdateOrganizationBioInDB()
     {
       //Arrange
-      Organization testOrganizationBio = new Organization("SaveTheMoistOwlet", "wwww.savethemoistowlet.com", "savethemoistowlet@gmail.com", "Save the Planet from evil humans who want to burn things:(");
+      Organization testOrganizationBio = new Organization("SaveTheMoistOwlet", "wwww.savethemoistowlet.com", "savethemoistowlet@gmail.com", "Save the Planet from evil humans who want to burn things:(", "Large Bio info");
       testOrganizationBio.Save();
       string updateOrganizationBio = "Saving the planet.";
       //Act

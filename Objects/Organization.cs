@@ -8,15 +8,16 @@ namespace GroupProject
   public class Organization
   {
     private int _id;
-    private string _name, _website, _email, _bio;
-    
-    public Organization(string Name, string Website, string Email, string Bio, int Id = 0)
+    private string _name, _website, _email, _bio, _largeBio;
+
+    public Organization(string Name, string Website, string Email, string Bio, string largeBio, int Id = 0)
     {
       _id = Id;
       _name = Name;
       _website = Website;
       _email = Email;
       _bio = Bio;
+      _largeBio = largeBio;
     }
 
     public int GetId()
@@ -39,6 +40,10 @@ namespace GroupProject
     {
       return _bio;
     }
+    public string GetLargeBio()
+    {
+      return _largeBio;
+    }
 
     public override bool Equals(System.Object otherOrganization)
     {
@@ -54,7 +59,8 @@ namespace GroupProject
         bool websiteEquality = (this.GetWebsite() == newOrganization.GetWebsite());
         bool emailEquality = (this.GetEmail() == newOrganization.GetEmail());
         bool bioEquality = (this.GetBio() == newOrganization.GetBio());
-        return (idEquality && nameEquality && websiteEquality && emailEquality && bioEquality);
+        bool largeBioEquality = (this.GetLargeBio() == newOrganization.GetLargeBio());
+        return (idEquality && nameEquality && websiteEquality && emailEquality && bioEquality && largeBioEquality);
       }
     }
 
@@ -80,7 +86,8 @@ namespace GroupProject
         string website = rdr.GetString(2);
         string email = rdr.GetString(3);
         string bio = rdr.GetString(4);
-        Organization newOrganization = new Organization(name, website, email, bio, id);
+        string largeBio = rdr.GetString(5);
+        Organization newOrganization = new Organization(name, website, email, bio, largeBio, id);
         AllOrganizations.Add(newOrganization);
       }
       if (rdr != null)
@@ -100,16 +107,18 @@ namespace GroupProject
       SqlConnection conn = DB.Connection();
       conn.Open();
 
-      SqlCommand cmd = new SqlCommand("INSERT INTO organizations (name, website, email, bio) OUTPUT INSERTED.id VALUES (@Name, @Website, @Email, @Bio);", conn);
+      SqlCommand cmd = new SqlCommand("INSERT INTO organizations (name, website, email, bio, large_bio) OUTPUT INSERTED.id VALUES (@Name, @Website, @Email, @Bio, @LargeBio);", conn);
       SqlParameter nameParam = new SqlParameter("@Name", this.GetName());
       SqlParameter websiteParam = new SqlParameter("@Website", this.GetWebsite());
       SqlParameter emailParam = new SqlParameter("@Email", this.GetEmail());
       SqlParameter bioParam = new SqlParameter("@Bio", this.GetBio());
+      SqlParameter largeBioParam = new SqlParameter("@LargeBio", this.GetLargeBio());
 
       cmd.Parameters.Add(nameParam);
       cmd.Parameters.Add(websiteParam);
       cmd.Parameters.Add(emailParam);
       cmd.Parameters.Add(bioParam);
+      cmd.Parameters.Add(largeBioParam);
 
       SqlDataReader rdr = cmd.ExecuteReader();
 
@@ -143,6 +152,7 @@ namespace GroupProject
       string website = null;
       string email = null;
       string bio = null;
+      string largeBio = null;
 
       while(rdr.Read())
       {
@@ -151,8 +161,9 @@ namespace GroupProject
         website = rdr.GetString(2);
         email = rdr.GetString(3);
         bio = rdr.GetString(4);
+        largeBio = rdr.GetString(5);
       }
-      Organization foundOrganization = new Organization(name, website, email, bio, foundId);
+      Organization foundOrganization = new Organization(name, website, email, bio, largeBio, foundId);
       if (rdr != null)
       {
         rdr.Close();
@@ -170,21 +181,24 @@ namespace GroupProject
       SqlConnection conn = DB.Connection();
       conn.Open();
 
-      SqlCommand cmd = new SqlCommand("UPDATE organizations SET name = @Name WHERE id = @Id; UPDATE organizations SET email = @Email WHERE id = @Id; UPDATE organizations SET bio = @Bio WHERE id = @Id;",  conn);
+      SqlCommand cmd = new SqlCommand("UPDATE organizations SET name = @Name WHERE id = @Id; UPDATE organizations SET email = @Email WHERE id = @Id; UPDATE organizations SET bio = @Bio WHERE id = @Id; UPDATE organizations SET large_bio = @LargeBio WHERE id = @Id;",  conn);
 
       SqlParameter nameParm = new SqlParameter("@Name", updateOrganizationInfo);
       SqlParameter emailParam = new SqlParameter("@Email", updateOrganizationInfo);
       SqlParameter bioParam = new SqlParameter("@Bio", updateOrganizationInfo);
+      SqlParameter largeBioParam = new SqlParameter("@LargeBio", updateOrganizationInfo);
       SqlParameter idParam = new SqlParameter("@Id", this.GetId());
 
       cmd.Parameters.Add(nameParm);
       cmd.Parameters.Add(emailParam);
       cmd.Parameters.Add(bioParam);
+      cmd.Parameters.Add(largeBioParam);
       cmd.Parameters.Add(idParam);
 
       this._name = updateOrganizationInfo;
       this._email = updateOrganizationInfo;
       this._bio = updateOrganizationInfo;
+      this._largeBio = updateOrganizationInfo;
       cmd.ExecuteNonQuery();
       conn.Close();
     }
