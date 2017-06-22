@@ -195,117 +195,85 @@ p {
   transform: translate(50%, 50%);
 }
 
-.cause-box:nth-child(1) {
+.cause-box:first-child {
   background: url(http://fillmurray.com/1000/500) center center no-repeat;
-<<<<<<< HEAD:Content/stylesheets/output.css
-
-=======
->>>>>>> master:stylesheets/output.css
   background-size: cover;
 }
 @media (min-width: 1024px) {
-  .cause-box:nth-of-type(1) {
+  .cause-box:first-child {
     flex-basis: 50%;
   }
 }
 
-.cause-box:nth-of-type(2) {
+.cause-box:nth-child(2) {
   background: url(http://fillmurray.com/400/500) center center no-repeat;
-<<<<<<< HEAD:Content/stylesheets/output.css
-
-=======
->>>>>>> master:stylesheets/output.css
   background-size: cover;
 }
 @media (min-width: 768px) {
-  .cause-box:nth-of-type(2) {
+  .cause-box:nth-child(2) {
     flex-basis: 50%;
   }
 }
 @media (min-width: 1024px) {
-  .cause-box:nth-of-type(2) {
+  .cause-box:nth-child(2) {
     flex-basis: 25%;
   }
 }
 
-
-.cause-box:nth-of-type(3) {
+.cause-box:nth-child(3) {
   background: url(http://fillmurray.com/700/500) center center no-repeat;
-<<<<<<< HEAD:Content/stylesheets/output.css
-
-=======
->>>>>>> master:stylesheets/output.css
   background-size: cover;
 }
 @media (min-width: 768px) {
-  .cause-box:nth-of-type(3) {
+  .cause-box:nth-child(3) {
     flex-basis: 50%;
   }
 }
 @media (min-width: 1024px) {
-  .cause-box:nth-of-type(3) {
+  .cause-box:nth-child(3) {
     flex-basis: 25%;
   }
 }
 
-
-.cause-box:nth-of-type(4) {
+.cause-box:nth-child(4) {
   background: url(http://fillmurray.com/601/500) center center no-repeat;
-<<<<<<< HEAD:Content/stylesheets/output.css
-
-=======
->>>>>>> master:stylesheets/output.css
   background-size: cover;
 }
 @media (min-width: 768px) {
-  .cause-box:nth-of-type(4) {
+  .cause-box:nth-child(4) {
     flex-basis: 50%;
   }
 }
 @media (min-width: 1024px) {
-  .cause-box:nth-of-type(4) {
+  .cause-box:nth-child(4) {
     flex-basis: 25%;
   }
 }
 
-
-.cause-box:nth-of-type(5) {
+.cause-box:nth-child(5) {
   background: url(http://fillmurray.com/500/500) center center no-repeat;
-<<<<<<< HEAD:Content/stylesheets/output.css
-
-=======
->>>>>>> master:stylesheets/output.css
   background-size: cover;
 }
 @media (min-width: 768px) {
-  .cause-box:nth-of-type(5) {
+  .cause-box:nth-child(5) {
     flex-basis: 50%;
   }
 }
 @media (min-width: 1024px) {
-  .cause-box:nth-of-type(5) {
+  .cause-box:nth-child(5) {
     flex-basis: 25%;
   }
 }
 
-
-.cause-box:nth-of-type(6) {
+.cause-box:nth-child(6) {
   background: url(http://fillmurray.com/1000/800) center center no-repeat;
-<<<<<<< HEAD:Content/stylesheets/output.css
-
-=======
->>>>>>> master:stylesheets/output.css
   background-size: cover;
 }
 @media (min-width: 1024px) {
-  .cause-box:nth-of-type(6) {
+  .cause-box:nth-child(6) {
     flex-basis: 50%;
   }
 }
-<<<<<<< HEAD:Content/stylesheets/output.css
-
-=======
->>>>>>> master:stylesheets/output.css
 
 footer {
   position: fixed;
