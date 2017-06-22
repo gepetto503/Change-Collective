@@ -107,6 +107,7 @@ namespace GroupProject
       SqlConnection conn = DB.Connection();
       conn.Open();
 
+
       SqlCommand cmd = new SqlCommand("INSERT INTO organizations (name, website, email, bio, large_bio) OUTPUT INSERTED.id VALUES (@Name, @Website, @Email, @Bio, @largeBio);", conn);
       SqlParameter nameParam = new SqlParameter("@Name", this.GetName());
       SqlParameter websiteParam = new SqlParameter("@Website", this.GetWebsite());
