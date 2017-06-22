@@ -1,0 +1,14 @@
+<h3>Donate to this organization below!</h3>
+<hr />
+
+<form action="/donate/organization" method="post">
+  <label for="organization-name">Donate to @Model.Organization.GetName()</label>
+  <input id="organization-name" name="organization-name" type="text">
+  <button type="submit">Donate!</button>
+</form>
+
+<p><a href="/">Back Home</a></p>
+<!-- clicking the donate button from index will lead you to a generic donate form.
+- Make donation a property of an organization.
+- Add column decimal donation to database to reflect this change.
+-->

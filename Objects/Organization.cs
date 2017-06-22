@@ -9,6 +9,7 @@ namespace GroupProject
   {
     private int _id;
     private string _name, _website, _email, _bio, _largeBio;
+    //private decimal _donation;
 
     public Organization(string Name, string Website, string Email, string Bio, string LargeBio, int Id = 0)
     {
@@ -18,6 +19,7 @@ namespace GroupProject
       _email = Email;
       _bio = Bio;
       _largeBio = LargeBio;
+      //_donation = Donation;
     }
 
     public int GetId()
@@ -45,6 +47,11 @@ namespace GroupProject
       return _largeBio;
     }
 
+    // public decimal GetDonation()
+    // {
+    //   //return _donation;
+    // }
+
     public override bool Equals(System.Object otherOrganization)
     {
       if(!(otherOrganization is Organization))
@@ -64,10 +71,10 @@ namespace GroupProject
       }
     }
 
-      public override int GetHashCode()
-      {
-        return this.GetName().GetHashCode();
-      }
+    public override int GetHashCode()
+    {
+      return this.GetName().GetHashCode();
+    }
 
     public static List<Organization> GetAll()
     {
@@ -182,7 +189,7 @@ namespace GroupProject
       SqlConnection conn = DB.Connection();
       conn.Open();
 
-      SqlCommand cmd = new SqlCommand("UPDATE organizations SET name = @Name WHERE id = @Id; UPDATE organizations SET email = @Email WHERE id = @Id; UPDATE organizations SET bio = @Bio WHERE id = @Id; UPDATE organizations SET large_bio =@LargeBio WHERE id = @Id;",  conn);
+      SqlCommand cmd = new SqlCommand("UPDATE organizations SET name = @Name WHERE id = @Id; UPDATE organizations SET email = @Email WHERE id = @Id; UPDATE organizations SET bio = @Bio WHERE id = @Id; UPDATE organizations SET large_bio = @LargeBio WHERE id = @Id;",  conn);
 
       SqlParameter nameParm = new SqlParameter("@Name", updateOrganizationInfo);
       SqlParameter emailParam = new SqlParameter("@Email", updateOrganizationInfo);

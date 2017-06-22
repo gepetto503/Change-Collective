@@ -54,33 +54,39 @@
             @foreach(var organization in Model)
             {
               <div class="cause-box one">
-                <form class="" action="/organization/organization.GetId()" method="get">
+                <form action="/organization/info" method="post">
                   <button class="grid-button" type="submit" name="button">Donate</button>
                 </form>
-              <div class="overlay">
-              <div class="cause-info">
-                <p>
-                  @organization.GetName()
-                </p>
-                <p>
-                  @organization.GetBio()
-                </p>
-              </div>
-              </div>
+                <div class="overlay">
+                <div class="cause-info">
+                  <p>
+                    @organization.GetName()
+                  </p>
+                  <p>
+                    @organization.GetBio()
+                  </p>
+                </div>
+                </div>
               </div>
             }
           }
-          <div class="cause-box two">
-            <button class="grid-button" type="submit" name="button">Donate</button>
-            <div class="overlay">
-              <div class="cause-info">
-                <p>
-                  this cause is blah blah blah Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
+
+              <div class="cause-box two">
+                <form action="/organization/Bio" method="get">
+                  <button class="grid-button" type="submit" name="button">Donate</button>
+                </form>
+                <div class="overlay">
+                <div class="cause-info">
+                  <p>
+
+                  </p>
+                  <p>
+                  </p>
+                </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="cause-box three">
+    
+          <!-- <div class="cause-box three">
             <button class="grid-button" type="submit" name="button">Donate</button>
             <div class="overlay">
               <div class="cause-info">
@@ -119,7 +125,7 @@
                 </p>
               </div>
             </div>
-          </div>
+          </div> -->
 
         </div>
       </section>
