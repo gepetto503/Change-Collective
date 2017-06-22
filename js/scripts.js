@@ -16,6 +16,36 @@ $(function(){
     $('.navbar').addClass('sticky');
   }
 
+  $('.input-bio1').click(function(){
+    $('.donate-text').hide();
+    $('.bio-1').show();
+  });
+
+  $('.input-bio2').click(function(){
+    $('.donate-text').hide();
+    $('.bio-2').show();
+  });
+
+  $('.input-bio3').click(function(){
+    $('.donate-text').hide();
+    $('.bio-3').show();
+  });
+
+  $('.input-bio4').click(function(){
+    $('.donate-text').hide();
+    $('.bio-4').show();
+  });
+
+  $('.input-bio5').click(function(){
+    $('.donate-text').hide();
+    $('.bio-5').show();
+  });
+
+  $('.input-bio6').click(function(){
+    $('.donate-text').hide();
+    $('.bio-6').show();
+  });
+
   //scroll function causes navbar to appear and dissapear on pages that don't have the fixed class on navbar
   $(window).scroll(function() {
       if ($(window).scrollTop() > 100) {
