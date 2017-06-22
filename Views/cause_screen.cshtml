@@ -11,7 +11,7 @@
   <body>
     <!--put header here-->
     <div class="main">
-      <a href="#bill-6"><h1 style="color:black">blah blah blah</h1></a>
+      <a href="#bill-6"><h1 style="color:black">@Model["selectedOrganization"].GetName()</h1></a>
       <div class="carousel-area">
         <div class="carousel flex-child">
           <input type="radio" id="carousel-1" name="carousel[]" checked>
@@ -57,8 +57,8 @@
 
       <div class="donate-to-causes"><!--this is the flex parent of donate text and donate form-->
         <div class="donate-text flex-child">
-          <h1>Morpheus Youth Project</h1>
-          <p>Transformation through arts and awareness. The purpose of the Morpheus Youth Project is to create an accessible, safe and respectful environment that encourages positive growth and provides creative opportunities through the arts and humanities.</p>
+          <h1>@Model["selectedOrganization"].GetName()</h1>
+          <p>@Model["selectedOrganization"].GetLargeBio()</p>
         </div>
 
         <div class="donate-form-area flex-child">
