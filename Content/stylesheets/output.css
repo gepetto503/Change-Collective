@@ -148,139 +148,96 @@ p {
   right: 50%;
   transform: translate(50%, 50%); }
 
-.cause-box:first-child {
+.cause-box:nth-child(1) {
   background: url(http://fillmurray.com/1000/500) center center no-repeat;
-<<<<<<< HEAD
+
   background-size: cover;
 }
 @media (min-width: 1024px) {
-  .cause-box:first-child {
+  .cause-box:nth-of-type(1) {
     flex-basis: 50%;
   }
 }
-=======
-  background-size: cover; }
-  @media (min-width: 1024px) {
-    .one {
-      flex-basis: 50%; } }
->>>>>>> master
 
-.cause-box:nth-child(2) {
+.cause-box:nth-of-type(2) {
   background: url(http://fillmurray.com/400/500) center center no-repeat;
-<<<<<<< HEAD
+
   background-size: cover;
 }
 @media (min-width: 768px) {
-  .cause-box:nth-child(2) {
+  .cause-box:nth-of-type(2) {
     flex-basis: 50%;
   }
 }
 @media (min-width: 1024px) {
-  .cause-box:nth-child(2) {
+  .cause-box:nth-of-type(2) {
     flex-basis: 25%;
   }
 }
-=======
-  background-size: cover; }
-  @media (min-width: 768px) {
-    .two {
-      flex-basis: 50%; } }
-  @media (min-width: 1024px) {
-    .two {
-      flex-basis: 25%; } }
->>>>>>> master
 
-.cause-box:nth-child(3) {
+
+.cause-box:nth-of-type(3) {
   background: url(http://fillmurray.com/700/500) center center no-repeat;
-<<<<<<< HEAD
+
   background-size: cover;
 }
 @media (min-width: 768px) {
-  .cause-box:nth-child(3) {
+  .cause-box:nth-of-type(3) {
     flex-basis: 50%;
   }
 }
 @media (min-width: 1024px) {
-  .cause-box:nth-child(3) {
+  .cause-box:nth-of-type(3) {
     flex-basis: 25%;
   }
 }
-=======
-  background-size: cover; }
-  @media (min-width: 768px) {
-    .three {
-      flex-basis: 50%; } }
-  @media (min-width: 1024px) {
-    .three {
-      flex-basis: 25%; } }
->>>>>>> master
 
-.cause-box:nth-child(4) {
+
+.cause-box:nth-of-type(4) {
   background: url(http://fillmurray.com/601/500) center center no-repeat;
-<<<<<<< HEAD
+
   background-size: cover;
 }
 @media (min-width: 768px) {
-  .cause-box:nth-child(4) {
+  .cause-box:nth-of-type(4) {
     flex-basis: 50%;
   }
 }
 @media (min-width: 1024px) {
-  .cause-box:nth-child(4) {
+  .cause-box:nth-of-type(4) {
     flex-basis: 25%;
   }
 }
-=======
-  background-size: cover; }
-  @media (min-width: 768px) {
-    .four {
-      flex-basis: 50%; } }
-  @media (min-width: 1024px) {
-    .four {
-      flex-basis: 25%; } }
->>>>>>> master
 
-.cause-box:nth-child(5) {
+
+.cause-box:nth-of-type(5) {
   background: url(http://fillmurray.com/500/500) center center no-repeat;
-<<<<<<< HEAD
+
   background-size: cover;
 }
 @media (min-width: 768px) {
-  .cause-box:nth-child(5) {
+  .cause-box:nth-of-type(5) {
     flex-basis: 50%;
   }
 }
 @media (min-width: 1024px) {
-  .cause-box:nth-child(5) {
+  .cause-box:nth-of-type(5) {
     flex-basis: 25%;
   }
 }
-=======
-  background-size: cover; }
-  @media (min-width: 768px) {
-    .five {
-      flex-basis: 50%; } }
-  @media (min-width: 1024px) {
-    .five {
-      flex-basis: 25%; } }
->>>>>>> master
 
-.cause-box:nth-child(6) {
+
+.cause-box:nth-of-type(6) {
   background: url(http://fillmurray.com/1000/800) center center no-repeat;
-<<<<<<< HEAD
+
   background-size: cover;
 }
 @media (min-width: 1024px) {
-  .cause-box:nth-child(6) {
+  .cause-box:nth-of-type(6) {
     flex-basis: 50%;
   }
 }
-=======
-  background-size: cover; }
-  @media (min-width: 1024px) {
-    .six {
-      flex-basis: 50%; } }
->>>>>>> master
+
 
 footer {
   position: fixed;

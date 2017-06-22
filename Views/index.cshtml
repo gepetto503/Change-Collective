@@ -53,7 +53,7 @@
           {
             @foreach(var organization in Model)
             {
-              <div class="cause-box one">
+              <div class="cause-box">
                 <form action="/organization/info" method="post">
                   <button class="grid-button" type="submit" name="button">Donate</button>
                 </form>
@@ -71,7 +71,7 @@
             }
           }
 
-              <div class="cause-box two">
+              @* <div class="cause-box two">
                 <form action="/organization/Bio" method="get">
                   <button class="grid-button" type="submit" name="button">Donate</button>
                 </form>
@@ -84,8 +84,8 @@
                   </p>
                 </div>
                 </div>
-              </div>
-    
+              </div> *@
+
           <!-- <div class="cause-box three">
             <button class="grid-button" type="submit" name="button">Donate</button>
             <div class="overlay">
