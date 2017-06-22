@@ -2,24 +2,33 @@
 
 ## MVP
 
-1. User can sign up with a user name and password, specific cause/categories for example animal shelters etc..
-2. Once signed up, user can access their information.
-3. User can donate a certain amount and frequency to a particular cause.
-4. The database holds a minimum of 6 organizations that they can choose to donate to.
-5. User can donate to multiple organizations at a given time.
-6. User can view their causes in their profile area.
-7. User has the abilty to filter causes based on category it falls under.
-8. When signed in, the user can hit refresh and their feed will be updated.
+1. User can sign up with a user name and password.
+2. User can view causes, hover over one and see details relating to it.
+3. User can click a cause and be taken to a detail screen with a carousel of the causes.
+4. When user selects a different slide on the carousel, text below appears describing that cause.
+3. The database holds a minimum of 6 organizations.
+
+
+
 
 #Wish-List
 1. Allow the user to see other peoples posts.
 2. Live Feed, page refreshes asyncronously rather than having to refresh manually.
+3. User can donate a certain amount and frequency to a particular cause.
+4. User can donate to multiple organizations at a given time.
+5. User can view their causes in their profile area.
+6. User has the abilty to filter causes based on category it falls under.
+7. When signed in, the user can hit refresh and their feed will be updated.
 
 
 ## Specification
 
 | Behavior | Input | Output | Description of Specification |
 | :-------------     | :------------- | :------------- | :------------- |
+| | username and password | profile screen appears | user can sign up |
+| | hover on square of cause grid | details of cause appear | User can view causes, hover over one and see details relating to it. |
+| | click donate button on square of cause grid | taken to new page with carousel |  User can click a cause and be taken to a detail screen with a carousel of the causes. |
+| | | | |
 
 ## Installation/Prerequisites
 
