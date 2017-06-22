@@ -41,12 +41,17 @@ namespace GroupProject
         newUser.Save();
         return View["profile.cshtml", newUser]; //Returns a profile page for this user:D
       };
-      
-      //
-      // Get["/donate/organization"] = _ =>  //If user clicks donate, return the donate form.
-      // {
-      //   return View["donate.cshtml"];
-      // };
+
+
+      Post["/organization/info/{id}"] = parameters =>  //If user clicks donate, return the donate form.
+      {
+        Dictionary<string, object> model = new Dictionary<string, object>();
+        Organization selectedOrganization = Organization.Find(parameters.id);
+        List<Organization> allOrganizations = Organization.GetAll();
+        model.Add("allOrganizations", allOrganizations);
+        model.Add("selectedOrganization", selectedOrganization);
+        return View["cause_screen.cshtml", model];
+      };
 
       //When a user clicks donate, they expect to see a form in which they can add $$ to the specified organization.
       // Post["/donate/organization"] = _ =>

@@ -54,7 +54,7 @@
             @foreach(var organization in Model)
             {
               <div class="cause-box">
-                <form action="/organization/info" method="post">
+                <form action="/organization/info/@organization.GetId()" method="post">
                   <button class="grid-button" type="submit" name="button">Donate</button>
                 </form>
                 <div class="overlay">
