@@ -2,9 +2,10 @@
   padding: 20px;
   @include desktop {
 
-    max-width: 90%;
+    max-width: 80%;
   };
   margin: auto;
+  padding-bottom: 60px;
 }
 
 .full {
