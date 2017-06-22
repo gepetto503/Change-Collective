@@ -7,9 +7,9 @@
   justify-content: center;
   .carousel {
     .carousel__items {
-      height: 285px;
+      height: 335px;
       @include tablet {
-        height: 600px;
+        height: 375px;
       };
     }
   }
