@@ -197,10 +197,6 @@ p {
 
 .cause-box:nth-child(1) {
   background: url(http://fillmurray.com/1000/500) center center no-repeat;
-<<<<<<< HEAD:Content/stylesheets/output.css
-
-=======
->>>>>>> master:stylesheets/output.css
   background-size: cover;
 }
 @media (min-width: 1024px) {
@@ -211,10 +207,7 @@ p {
 
 .cause-box:nth-of-type(2) {
   background: url(http://fillmurray.com/400/500) center center no-repeat;
-<<<<<<< HEAD:Content/stylesheets/output.css
 
-=======
->>>>>>> master:stylesheets/output.css
   background-size: cover;
 }
 @media (min-width: 768px) {
@@ -231,10 +224,7 @@ p {
 
 .cause-box:nth-of-type(3) {
   background: url(http://fillmurray.com/700/500) center center no-repeat;
-<<<<<<< HEAD:Content/stylesheets/output.css
 
-=======
->>>>>>> master:stylesheets/output.css
   background-size: cover;
 }
 @media (min-width: 768px) {
@@ -251,10 +241,7 @@ p {
 
 .cause-box:nth-of-type(4) {
   background: url(http://fillmurray.com/601/500) center center no-repeat;
-<<<<<<< HEAD:Content/stylesheets/output.css
 
-=======
->>>>>>> master:stylesheets/output.css
   background-size: cover;
 }
 @media (min-width: 768px) {
@@ -271,10 +258,7 @@ p {
 
 .cause-box:nth-of-type(5) {
   background: url(http://fillmurray.com/500/500) center center no-repeat;
-<<<<<<< HEAD:Content/stylesheets/output.css
 
-=======
->>>>>>> master:stylesheets/output.css
   background-size: cover;
 }
 @media (min-width: 768px) {
@@ -291,10 +275,7 @@ p {
 
 .cause-box:nth-of-type(6) {
   background: url(http://fillmurray.com/1000/800) center center no-repeat;
-<<<<<<< HEAD:Content/stylesheets/output.css
 
-=======
->>>>>>> master:stylesheets/output.css
   background-size: cover;
 }
 @media (min-width: 1024px) {
@@ -302,10 +283,7 @@ p {
     flex-basis: 50%;
   }
 }
-<<<<<<< HEAD:Content/stylesheets/output.css
 
-=======
->>>>>>> master:stylesheets/output.css
 
 footer {
   position: fixed;

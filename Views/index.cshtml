@@ -6,87 +6,77 @@
     <link rel="stylesheet" href="/Content/stylesheets/output.css">
     <script src="/Content/js/jquery-3.2.1.js"></script>
     <script src="/Content/js/scripts.js"></script>
-    <title></title>
+    <title class="home">Home</title>
   </head>
   <body>
     <header class="navbar">
+      <div class="row">
+        <div class="nav-left">
 
-        <div class="row">
-          <div class="nav-left">
-            <a class="logo" href="#">Home / </a>
-            <a class="back-nav" href="#">Back</a>
-          </div>
-
+          <a class="logo" href="index.html">Home</a>
+        </div>
           <div class="mobile-toggle">
               <span></span>
               <span></span>
               <span></span>
           </div>
+
           <nav>
               <ul>
-                @* <!-- <li><a href=".cause-grid"><img src="images/facebook.png" alt="facebook logo" /></a></li> *@
-                @* <li><a href=".cause-grid"><img src="/Content/images/twitter.png" alt="twitter logo" /></a></li> --> *@
-                <li><a href=".cause-grid">Causes</a></li>
-                <li><a href=".sign-up">Sign Up</a></li>
+                  <li><a href="cause-screen.html">Causes</a></li>
+                  <li><a href="feed.html">Feed</a></li>
+                  <li><a href="profile.html">Profile</a></li>
+                  <li><a href="#">Sign Out</a></li>
               </ul>
           </nav>
-        </div> <!-- / row -->
 
+      </div> <!-- / row -->
     </header>
-
     <div class="hero">
-      <h1>Venmo For Non Profits</h1>
-      <p><span class="highlight-text">A money management and social media web app.</span></p>
+      <div class="hero-overlay">
+
+      </div>
+      <div class="text">
+        <h1>The Change Collective</h1>
+        <p><span class="highlight-text">Subscription-based crowd funding for non profits.</span></p>
+      </div>
     </div>
 
 
     <div class="main">
       <div class="mission">
-        <h1>Our Mission</h1>
-        <p>
-          do all the cool Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        <h2>Our Mission</h2>
+        <p>Everybody's busy and most people who care about social change tend to be pretty broke (coincidence?).  The change collective is a community of busy, mostly broke people chipping in and staying connected to make a difference.</p>
+        <p>We are a platform for folks to donate to help in a way that makes sense for their budget, lifestyle, and values: Give however much you want, however often you want to one (ore more!) of our awesome partner non-profits.</p>
+        <p>From arts to the environment to homelessness issues, from $1 a month to $1,000 (if you're Jay Z or somebody), we've got you covered!  Once you've picked a plan that's comfortable for you, we automatically transfer the amount from your (fictional) bank account before you blow it all on $5 coffees.</p>
+        <p>Plus, you can keep up with the organizations that interest you most and the people that support them through our social media feed.</p>
+        <p>Check out the non-profits below, and when you're ready, click donate to select how much you want to give (you can change this at any time).</p>
       </div>
-      <section>
+      <section class="causes">
+        <h2>Our Causes</h2>
         <div class="flex-grid-container">
-          @if(@Model.Count != 0)
+          @if(Model.Count != 0)
           {
             @foreach(var organization in Model)
             {
               <div class="cause-box">
-                <form action="/organization/info/@organization.GetId()" method="post">
-                  <button class="grid-button" type="submit" name="button">Donate</button>
-                </form>
+              <form action="/organization/info/@organization.GetId()" method="post">
+                <button class="grid-button" type="submit" name="button">Donate</button>
+              </form>
                 <div class="overlay">
-                <div class="cause-info">
-                  <p>
-                    @organization.GetName()
-                  </p>
-                  <p>
-                    @organization.GetBio()
-                  </p>
-                </div>
+                  <div class="cause-info">
+                    <p>
+                      @organization.GetName()
+                    </p>
+                    <p>
+                      @organization.GetBio()
+                    </p>
+                  </div>
                 </div>
               </div>
             }
           }
-
-              @* <div class="cause-box two">
-                <form action="/organization/Bio" method="get">
-                  <button class="grid-button" type="submit" name="button">Donate</button>
-                </form>
-                <div class="overlay">
-                <div class="cause-info">
-                  <p>
-
-                  </p>
-                  <p>
-                  </p>
-                </div>
-                </div>
-              </div> *@
-
-          <!-- <div class="cause-box three">
+          @* <div class="cause-box">
             <button class="grid-button" type="submit" name="button">Donate</button>
             <div class="overlay">
               <div class="cause-info">
@@ -96,7 +86,7 @@
               </div>
             </div>
           </div>
-          <div class="cause-box four">
+          <div class="cause-box">
             <button class="grid-button" type="submit" name="button">Donate</button>
             <div class="overlay">
               <div class="cause-info">
@@ -106,7 +96,7 @@
               </div>
             </div>
           </div>
-          <div class="cause-box five">
+          <div class="cause-box">
             <button class="grid-button" type="submit" name="button">Donate</button>
             <div class="overlay">
               <div class="cause-info">
@@ -116,7 +106,7 @@
               </div>
             </div>
           </div>
-          <div class="cause-box six">
+          <div class="cause-box">
             <button class="grid-button" type="submit" name="button">Donate</button>
             <div class="overlay">
               <div class="cause-info">
@@ -125,66 +115,19 @@
                 </p>
               </div>
             </div>
-          </div> -->
-
+          </div>
+          <div class="cause-box">
+            <button class="grid-button" type="submit" name="button">Donate</button>
+            <div class="overlay">
+              <div class="cause-info">
+                <p>
+                  this cause is blah blah blah Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+            </div>
+          </div> *@
         </div>
       </section>
-
-      <!-- <section class="cause-grid">
-        <h2><span class="highlight-text">Causes</span></h2>
-        <div class="flex-container">
-          <div class="cause uno">
-            <div class="flip-container">
-              <div class="flipper">
-                <div class="front">
-                  <img src="http://fillmurray.com/200/200" alt="filler image">
-                </div>
-                <div class="back">
-                  <p>here's some Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="cause dos">
-            <div class="flip-container">
-              <div class="flipper">
-                <div class="front">
-                  <img src="http://fillmurray.com/200/200" alt="filler image">
-                </div>
-                <div class="back">
-                  <p>here's some Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="cause tres">
-            <div class="flip-container">
-              <div class="flipper">
-                <div class="front">
-                  <img src="http://fillmurray.com/200/200" alt="filler image">
-                </div>
-                <div class="back">
-                  <p>here's some Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="cause quatro">
-            <div class="flip-container">
-              <div class="flipper">
-                <div class="front">
-                  <img src="http://fillmurray.com/200/200" alt="filler image">
-                </div>
-                <div class="back">
-                  <p>here's some Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
-
 
       <section class="sign-up">
         <h2><span class="highlight-text"></span></h2>
@@ -192,20 +135,20 @@
           <form class="my-form" action="/user/new" method="post">
             <h3>Sign Up</h3>
             <div class="form-group">
-              <label>Name</label>
-              <input type="text" name="name" placeholder="Enter your name">
-            </div>
-            <div class="form-group">
-              <label>Email</label>
-              <input type="text" name="email" placeholder="Enter your email">
-            </div>
-            <div class="form-group">
               <label>Username</label>
               <input type="text" name="username" placeholder="Create a username">
             </div>
             <div class="form-group">
               <label>Password</label>
               <input type="text" name="password" placeholder="Create a password">
+            </div>
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" name="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="text" name="email" placeholder="Enter your email">
             </div>
             <button class="form-button" type="submit" name="button">Sign Up</button>
             <p>Been here before? <a href="/sign_in">Sign in here</a></p>
@@ -215,9 +158,9 @@
     </div>
     <footer>
       <a href="https://github.com/gepetto503/venmo-for-non-profits"><li>Github</li></a>
-      <a href="#"><li>Meet Our Team</li></a>
-      <a href="#"><li>Contact</li></a>
+      <a href="/about"><li>Meet Our Team</li></a>
+      <a href="/contact"><li>Contact</li></a>
     </footer>
-
+    <!--put footer here-->
   </body>
 </html>

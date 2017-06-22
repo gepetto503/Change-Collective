@@ -13,6 +13,14 @@ namespace GroupProject
         List<Organization> allOrganizations = Organization.GetAll();  //Instantiate a new object of all of the organizations.
         return View["index.cshtml", allOrganizations];
       };
+      Get["/about"] = _ =>
+      {
+        return View["about.cshtml"];
+      };
+      Get["/contact"] = _ =>
+      {
+        return View["contact.cshtml"];
+      };
 
       Get["/sign_in"] = _ => //localhost:5004/user/new In the case that this is a new user bring them to this page.
       {
