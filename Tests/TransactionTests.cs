@@ -56,12 +56,13 @@ namespace GroupProject
       //Assert
       Assert.Equal(testTransaction, foundTransaction);
     }
-    
+
     public void Dispose()
     {
       Transaction.DeleteAll();
       Organization.DeleteAll();
       User.DeleteAll();
+      Category.DeleteAll();
     }
 
 
