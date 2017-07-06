@@ -4,6 +4,7 @@
 
 #### By _Brendan Hanna, Jordan Mysleviec, Ethan Luts, Beth Hansen, Michael Kojeca_
 
+
 ## MVP
 
 1. User can sign up with a user name and password.
